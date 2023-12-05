@@ -99,7 +99,7 @@ const Map = () => {
     };
   }, []);
 
-  return <div id="map" style={{ height: '600px', width: '800px' }}></div>;
+  return <div id="map" className="h-[600px] w-[800px] rounded" ></div>;
 };
 
 export default Map;
