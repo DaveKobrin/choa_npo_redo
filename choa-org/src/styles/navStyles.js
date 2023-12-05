@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Image from 'next/image';
 
 export const SNav = styled.nav`
   display: flex;
@@ -12,7 +11,7 @@ export const SNav = styled.nav`
 
 export const NavItem = styled.li`
   list-style: none;
-  margin: 0 1rem;
+  margin: 0 1rem 0.5rem;
 
   a {
     color: #fff;
@@ -62,6 +61,7 @@ export const MobileNav = styled.ul`
   flex-direction: column;
   margin: 0;
   padding: 0;
+  background-color: rgba(83,170,83,1);
 
   @media (max-width: 767px) {
     display: flex;

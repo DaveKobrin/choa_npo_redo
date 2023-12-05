@@ -7,6 +7,8 @@ const NavBar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState(false);
 
   return (
+    <>
+    
     <SNav>
       <Logo>
         <Image src="/choa-logo-color-white.webp" alt="Logo" width={180} height={37} priority />
@@ -30,13 +32,14 @@ const NavBar = () => {
         <NavItem><Link href="/">Services</Link></NavItem>
         <NavItem><Link href="/">Contact</Link></NavItem>
       </DesktopNav>
+    </SNav>
       <MobileNav style={{ display: isMobileNavOpen ? 'flex' : 'none' }}>
-      <NavItem><Link href="/">Home</Link></NavItem>
+        <NavItem><Link href="/">Home</Link></NavItem>
         <NavItem><Link href="/">About</Link></NavItem>
         <NavItem><Link href="/">Services</Link></NavItem>
         <NavItem><Link href="/">Contact</Link></NavItem>
       </MobileNav>
-    </SNav>
+    </>
   );
 };
 
