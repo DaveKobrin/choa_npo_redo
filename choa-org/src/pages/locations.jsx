@@ -11,8 +11,8 @@ const mapLocations = () => {
                 <Map/>
             </div>
             <div className="flex justify-center">
-                <Button text={"DONATE"} bgColor={PageColors.BUTTON_GREEN} textColor={PageColors.TEXT_WHITE} />
-                <Button text={"MYCHART LOG IN"} />
+                <Button text={"MYChart Log In"} bgColor={PageColors.BUTTON_GREEN} textColor={PageColors.TEXT_WHITE} />
+                <Button text={"Donate"} bgColor={PageColors.BUTTON_YELLOW} textColor={PageColors.TEXT_BLACK}/>
             </div>
         </>
     )
