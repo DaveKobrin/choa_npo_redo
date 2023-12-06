@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
-import {locationAndWaitTimes} from "@/data/locationAndWaitTimes";
-
+import { useEffect, useState } from "react";
+import { locationAndWaitTimes } from "@/data/locationAndWaitTimes";
 
 const Map = () => {
+  const [googleMapsScriptUrl, setGoogleMapsScriptUrl] = useState("");
+
   const geocodeAddresses = (locations) => {
     return Promise.all(
       locations.map((location) => {
@@ -14,8 +15,17 @@ const Map = () => {
           const fullAddress = `${address}, ${city}, ${state} ${zipcode}`;
 
           geocoder.geocode({ address: fullAddress }, (results, status) => {
-            if (status === 'OK' && results && results[0] && results[0].geometry && results[0].geometry.location) {
-              resolve({ position: results[0].geometry.location, address: fullAddress });
+            if (
+              status === "OK" &&
+              results &&
+              results[0] &&
+              results[0].geometry &&
+              results[0].geometry.location
+            ) {
+              resolve({
+                position: results[0].geometry.location,
+                address: fullAddress,
+              });
             } else {
               console.error(`Geocoding failed for address: ${fullAddress}`);
               reject();
@@ -26,80 +36,92 @@ const Map = () => {
     );
   };
 
-
   useEffect(() => {
-    const customWindow = window;
-    customWindow.initMap = async () => {
-      const mapElement = document.getElementById('map');
+    fetch("/api/maps")
+      .then((response) => response.json())
+      .then((data) => {
+        const { googleMapsScriptUrl } = data;
+        setGoogleMapsScriptUrl(googleMapsScriptUrl);
 
-      if (!mapElement) {
-        console.error('Map element not found');
-        return;
-      }
+        const customWindow = window;
+        customWindow.initMap = async () => {
+          const mapElement = document.getElementById("map");
 
-      const map = new google.maps.Map(mapElement, {
-        center: { lat: 33.84, lng: -84.4194 },
-        zoom: 9.3,
-      });
-
-      try {
-        const locations = locationAndWaitTimes.map(item => ({
-          address: item.address,
-          city: item.city,
-          state: item.state,
-          zipcode: item.zipcode,
-        }));
-      
-        const results = await geocodeAddresses(locations);
-      
-        results.forEach((result, index) => {
-          const { position, address } = result;
-          const service = locationAndWaitTimes[index].facilityType;
-      
-          // Customize marker based on the service
-          let markerIcon;
-      
-          switch (service) {
-            case 'Urgent Care Center':
-              markerIcon = 'http://maps.google.com/mapfiles/ms/icons/hospitals.png';
-              break;
-            case 'Emergency Department':
-              markerIcon = 'http://maps.google.com/mapfiles/ms/icons/red.png';
-              break;
-            default:
-              markerIcon = 'http://maps.google.com/mapfiles/ms/icons/blue.png'; // Default blue icon
-              break;
+          if (!mapElement) {
+            console.error("Map element not found");
+            return;
           }
-      
-          const marker = new google.maps.Marker({
-            position,
-            map,
-            title: address,
-            icon: markerIcon,
+
+          const map = new google.maps.Map(mapElement, {
+            center: { lat: 33.87, lng: -84.34 },
+            zoom: 9.3,
           });
-        });
-      } catch (error) {
-        console.error('Error geocoding addresses:', error);
-      }
-    };
 
-    const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&callback=customWindow.initMap&libraries=places`;
-    script.async = false;
-    script.defer = true;
+          try {
+            const locations = locationAndWaitTimes.map((item) => ({
+              address: item.address,
+              city: item.city,
+              state: item.state,
+              zipcode: item.zipcode,
+            }));
 
-    script.onload = () => {
-      customWindow.initMap?.();
-    };
+            const results = await geocodeAddresses(locations);
 
-    document.head.appendChild(script);
+            results.forEach((result, index) => {
+              const { position, address } = result;
+              const service = locationAndWaitTimes[index].facilityType;
 
-    return () => {
-      document.head.removeChild(script);
-    };
+              // Customize marker based on the service
+              let markerIcon;
+
+              switch (service) {
+                case "Urgent Care Center":
+                  markerIcon =
+                    "http://maps.google.com/mapfiles/ms/icons/hospitals.png";
+                  break;
+                case "Emergency Department":
+                  markerIcon =
+                    "http://maps.google.com/mapfiles/ms/icons/red.png";
+                  break;
+                default:
+                  markerIcon =
+                    "http://maps.google.com/mapfiles/ms/icons/blue.png"; // Default blue icon
+                  break;
+              }
+
+              const marker = new google.maps.Marker({
+                position,
+                map,
+                title: address,
+                icon: markerIcon,
+              });
+            });
+          } catch (error) {
+            console.error("Error geocoding addresses:", error);
+          }
+        };
+
+        const script = document.createElement("script");
+        script.src = googleMapsScriptUrl;
+        script.async = false;
+        script.defer = true;
+
+        script.onload = () => {
+          customWindow.initMap?.();
+        };
+
+        document.head.appendChild(script);
+
+        return () => {
+          document.head.removeChild(script);
+        };
+      })
+      .catch((error) =>
+        console.error("Error fetching Google Maps script URL:", error)
+      );
   }, []);
 
-  return <div id="map" className="h-[600px] w-[800px] rounded" ></div>;
+  return <div id="map" className="h-[600px] w-[600px] rounded"></div>;
 };
 
 export default Map;
