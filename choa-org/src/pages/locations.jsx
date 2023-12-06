@@ -1,6 +1,7 @@
 import Map from '../components/Maps'
 import { locationAndWaitTimes } from '@/data/locationAndWaitTimes'
 import Button from '../components/Button'
+import { PageColors } from '@/styles/globalstyles';
 
 const mapLocations = () => {
     return (
@@ -10,7 +11,8 @@ const mapLocations = () => {
                 <Map/>
             </div>
             <div className="flex justify-center">
-                <Button text={"DONATE"} />
+                <Button text={"DONATE"} bgColor={PageColors.BUTTON_GREEN} textColor={PageColors.TEXT_WHITE} />
+                <Button text={"MYCHART LOG IN"} />
             </div>
         </>
     )
