@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav } from '@/styles/navStyles';
+
 import Link from 'next/link';
 
 const NavBar = () => {
