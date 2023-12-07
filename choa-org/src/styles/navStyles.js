@@ -58,6 +58,8 @@ export const DesktopNav = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 
   @media (max-width: 767px) {
     display: none;
