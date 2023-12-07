@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import VisitType from '@/components/visitType'
 import React from 'react';
 import { HeroSection, HeroCard, HeroContent, CardImage} from '../styles/indexherostyles';
 import Dropdown from '../components/ImportantUpdate';
@@ -12,9 +13,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
-    <div className='m-5'>
-      <h1>HOME PAGE</h1>
-  </div>
+   
   
   <div>
     <HeroSection>
@@ -31,7 +30,10 @@ export default function Home() {
         </HeroCard>
 
     </HeroSection>
+      <div className='m-5'>
+          <VisitType/>
       </div>
+    </div>
     </>
   )
 }
