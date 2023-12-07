@@ -10,20 +10,23 @@ export const HeroSection = styled.div`
   background-size: cover;
   background-position: center;
   color: white; 
-  font-size: 24px;
+  font-size: 1rem;
   background-color: #011626;
 `;
 
 export const HeroContent = styled.div`
-   background-color: #011626;
-    flex: 1; 
-    padding: 20px; 
+   flex: 1;
+  padding: 20px;
+  max-width: 50%; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
 `;
 
 export const HeroCard = styled.div`
   display: flex;
   align-items: center; 
-   height: 100%; 
+  height: 100%; 
 `;
 
 export const CardImage = styled.img`
@@ -32,7 +35,7 @@ export const CardImage = styled.img`
   object-fit: cover;
 `;
 
-// -----------------------Styled components for the dropdown content----------------------- //
+// -----------------------Styled components for IMPORTANT UPDATE DROP DOWN content----------------------- //
 
 
 export const StyledUl = styled.ul`

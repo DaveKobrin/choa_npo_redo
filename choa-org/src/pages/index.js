@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import React from 'react';
-import { HeroSection, HeroCard, HeroContent, CardImage} from '../styles/herostyles';
+import { HeroSection, HeroCard, HeroContent, CardImage} from '../styles/indexherostyles';
 import Dropdown from '../components/ImportantUpdate';
 
 
@@ -17,7 +17,6 @@ export default function Home() {
   </div>
   
   <div>
-  
     <HeroSection>
 
         <HeroContent>
@@ -30,7 +29,7 @@ export default function Home() {
          <HeroCard>
            <CardImage src="/indexHeroBanner.png" alt="Baby Girl" />
         </HeroCard>
-        
+
     </HeroSection>
       </div>
     </>
