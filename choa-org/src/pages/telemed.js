@@ -2,19 +2,18 @@ import React from "react"
 import { HeroBox, HeroContainer } from "@/styles/heroStyle"
 import GreenBoxDD from "@/components/GreenBoxDD"
 import Image from 'next/image';
+import { Hero } from "@/components/hero"
+import { TelemedContainer } from "@/styles/telemedStyles"
 
 export default function Telemed() {
+
+    const heroImg = "/telemedicine-mom-son-phone-1440x748.jpg.png"
+    const heroText = "Our Telemedicine Program allows patients to connect with Childrens specialists from the comfort of their home through our virtual telemedicine visits.";
+
     return (
         <>
-            <HeroContainer>
-                <HeroBox>
-                    <h2 
-                    className="mb-5 text-#285844 text-5xl text-[#285844]">Telemedicine</h2>
-                    <p className="text-#5A5A5A">
-                        Our Telemedicine Program allows patients to connect with Childrens specialists from the comfort of their home through our virtual telemedicine visits.
-                    </p>
-                </HeroBox>
-            </HeroContainer>
+            <Hero img={heroImg} head="Telemedicine" text={heroText} />
+            
             <div className="flex align-top m-2 ">
                 <p className="text-green-600 tracking-widest">Home</p>
                 <div className="w-0 h-0 mt-1.5 mr-2 ml-2
@@ -25,7 +24,7 @@ export default function Telemed() {
 
                 <p className="tracking-widest">Telemedicine</p>
             </div>
-            <div className="ml-48 mr-48 mt-10 mb-20">
+            <TelemedContainer>
                 <h2 className='text-4xl mb-10 text-[#285844]'>Starting Your Virtual Visit</h2>
                 <GreenBoxDD text='MAKE YOUR VISRTUAL APPOINTMENT'/>
                 <GreenBoxDD text='PREPARE FOR YOUR VIRTUAL APPOINTMENT'/>
@@ -90,7 +89,8 @@ virtual visit eCheck-in</h2>
                         
                     </div>
                 </div>
-            </div>
+            </TelemedContainer>
+
         </>
     )
 }

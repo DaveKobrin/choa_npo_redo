@@ -11,3 +11,8 @@ export const GreenBox = styled.div`
     cursor: pointer;
   
 `;
+
+export const TelemedContainer = styled.div`
+    max-width: 800px;
+    margin: 70px auto;
+`;

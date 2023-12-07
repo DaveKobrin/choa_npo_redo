@@ -1,13 +1,9 @@
 import styled from 'styled-components';
 
 export const HeroContainer = styled.div`
-    background-image: url('/telemedicine-mom-son-phone-1440x748.jpg.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     height: 500px;
     margin-top: 10px;
-    position: relative;
+    position: relative; 
 `;
 
 export const HeroBox = styled.div`
@@ -17,4 +13,15 @@ export const HeroBox = styled.div`
     padding: 50px;
     margin-left: 50px;
     margin-top: 100px;
+`;
+
+export const HeroHead = styled.h2`
+    margin-bottom:5;
+    color:#285844;
+    font-size: 3rem;
+    
+`;
+
+export const HeroText = styled.p`
+    color:#5A5A5A;
 `;
