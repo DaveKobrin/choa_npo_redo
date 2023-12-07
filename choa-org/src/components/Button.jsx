@@ -11,11 +11,12 @@ import { PageColors } from '@/styles/globalstyles';
     //     borderRadius={"1.5rem"}
     //     fontSize={"1.25rem"}
     //     padding={"1rem 2rem"}
+    //     handleClick={handleClick}
     //     />
 
 // FIXME: Padding does not currently work, but all other props seem to work fine
 
-const Button = ({ text, bgColor, textColor, borderRadius, fontSize, padding}) => {
+const Button = ({ text, bgColor, textColor, borderRadius, fontSize, padding, handleClick}) => {
 
 const StyledButton = styled.button`
   background-color: ${(props) => props.bgColor};
@@ -25,7 +26,7 @@ const StyledButton = styled.button`
   font-size: ${(props) => props.fontSize};
 `;
 
-  return <StyledButton bgColor={bgColor} textColor={textColor} borderRadius={borderRadius} fontSize={fontSize} padding={padding}>{text}</StyledButton>;
+  return <StyledButton bgColor={bgColor} textColor={textColor} borderRadius={borderRadius} fontSize={fontSize} padding={padding} onClick={handleClick}>{text}</StyledButton>;
 };
 
 export default Button;
