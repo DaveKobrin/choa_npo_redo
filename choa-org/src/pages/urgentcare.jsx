@@ -32,7 +32,6 @@ const urgentCare = () => {
         <div className="flex flex-col justify-center mt-32 mb-20">
           {locationAndWaitTimes
             .filter((location) => {
-              console.log("Location: " + JSON.stringify(location));
               return location.facilityType === "Urgent Care Center";
             })
             .map((location, index) => (
