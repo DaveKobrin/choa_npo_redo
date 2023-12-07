@@ -10,6 +10,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 
 export default function Home() {
+
+  const options = ['Update 1', 'Update 2', 'Update 3'];
   return (
     <>
     <div className='m-5'>
@@ -17,6 +19,7 @@ export default function Home() {
   </div>
   
   <div>
+    <Dropdown options={options} />
     <HeroSection>
 
         <HeroContent>
