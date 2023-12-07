@@ -16,7 +16,9 @@ const NavBar = () => {
     
     <SNav>
       <Logo>
-        <Image src="/choa-logo-color-white.webp" alt="Logo" width={200} height={37} priority />
+        <Link href="/">
+          <Image src="/choa-logo-color-white.webp" alt="Logo" width={200} height={37} priority />
+        </Link>
       </Logo>
       <MobileNavToggle onClick={() => {setIsMobileNavOpen(!isMobileNavOpen)}}>
         {isMobileNavOpen ? 
