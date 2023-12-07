@@ -1,3 +1,4 @@
+import { WaitCard } from "@/components/waitCard";
 import {locationAndWaitTimes} from "@/data/locationAndWaitTimes";
 
 const WaitTimes = () => {
@@ -5,11 +6,7 @@ const WaitTimes = () => {
         locationAndWaitTimes.map((location, idx) => {
             return (
             <>
-                <p>{location.name}</p>
-                <p>{location.address}</p>
-                <p>{location.city}</p>
-                <p>{location.state}</p>
-                <p>{location.zipcode}</p>
+                <WaitCard location={location} key={idx} />
             </>
         )})
     )
