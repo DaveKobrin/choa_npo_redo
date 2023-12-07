@@ -1,18 +1,21 @@
 import styled from 'styled-components';
+import GlobalStyle from './globalstyles';
 
 export const SNav = styled.nav`
+  font-size: 14px;
   display: flex;
+  padding-right: 72px;
   justify-content: space-between;
-  align-items: center;
-  background-color: rgba(83,170,83,1);
-  background-image: linear-gradient(to right,rgba(83,170,83,1),rgba(83,170,83,0.5));
+  background: linear-gradient(90deg, #00A94F 0%, rgba(100, 188, 109, 0.80) 93.11%);
   color: #fff;
   padding: 1rem;
 `;
 
+
 export const NavItem = styled.li`
   list-style: none;
-  margin: 0 1rem 0.5rem;
+  margin: 0 1.5rem 0.5rem;
+  font-style: normal;
 
 
   a {
@@ -28,7 +31,7 @@ export const NavItem = styled.li`
 
 export const Logo = styled.h1`
   font-size: 1.5rem;
-  margin: 0;
+  margin-left: 10px;
 `;
 
 export const MobileNavToggle = styled.button`
@@ -53,6 +56,7 @@ export const MobileNavToggle = styled.button`
 export const DesktopNav = styled.ul`
   display: flex;
   flex-direction: row;
+  align-items: center;
 
   @media (max-width: 767px) {
     display: none;
@@ -64,7 +68,7 @@ export const MobileNav = styled.ul`
   flex-direction: column;
   margin: 0;
   padding: 0;
-  background-color: rgba(83,170,83,1);
+  background: linear-gradient(90deg, #00A94F 0%, rgba(100, 188, 109, 0.80) 93.11%);
 
   @media (max-width: 767px) {
     display: flex;
@@ -73,7 +77,6 @@ export const MobileNav = styled.ul`
 
 export const Menu1 = styled.ul`
   position: absolute;
-  border: 1px solid black;
   color: black;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -82,10 +85,41 @@ export const Menu1 = styled.ul`
 `;
 
 export const SearchBox = styled.div`
-  className='flex'
-  background-color: #ffffff;
-  opacity: 0.3;
-  border-radius: 25px;
+  background-color: #fff;
+  height: 30px;
+  opacity: 0.5;
+  display: flex;
   position: relative;
+  alignText: right;
+  border-radius: 25px;
+  padding: 0 5px;
+  justify-content: center;
+  align-items: center;
+  
+`;
+
+export const SearchInput = styled.input`
+  
+  width: 80%;
+  height: 20px;
+  font-size: 16px;
+  color: black;
+  padding-left: 3px
+  border-radius: 25px;
+
+  &:focus{
+    outline: none;
+  }
+  
+`;
+
+export const SearchIcon = styled.div`
+  position: absolute;
+  color: black;
+  right: 0;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
   
 `;
