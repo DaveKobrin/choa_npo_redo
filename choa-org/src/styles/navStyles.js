@@ -5,6 +5,7 @@ export const SNav = styled.nav`
   font-size: 14px;
   display: flex;
   padding-right: 72px;
+  align-items: center;
   justify-content: space-between;
   background: linear-gradient(90deg, #00A94F 0%, rgba(100, 188, 109, 0.80) 93.11%);
   color: #fff;
@@ -57,6 +58,8 @@ export const DesktopNav = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 
   @media (max-width: 767px) {
     display: none;
@@ -81,6 +84,7 @@ export const Menu1 = styled.ul`
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: #fff;
+  z-index: 100;
   
 `;
 
