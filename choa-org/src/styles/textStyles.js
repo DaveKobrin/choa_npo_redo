@@ -15,6 +15,13 @@ export const Heading3Title = styled.h3`
     line-height: 2.16125rem;
 `;
 
+export const Heading4Title = styled.h3`
+    color: #285844;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.16125rem;
+`;
+
 export const ParagText = styled.p`
     margin: 10px 0px;
     color: #5A5A5A;
