@@ -82,6 +82,7 @@ export const Menu1 = styled.ul`
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: #fff;
+  z-index: 100;
   
 `;
 

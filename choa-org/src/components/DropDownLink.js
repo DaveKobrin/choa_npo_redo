@@ -5,10 +5,10 @@ import Link from 'next/link';
 export default function DropDownLink({menuOpen, setMenuOpen , links}) {
     return (
         <NavItem>
-          <Link
+          <button
             className='flex items-center'
             onClick={()=>setMenuOpen(!menuOpen)}
-            href="/">
+            >
             {links.title}
             {
                 menuOpen ? (
@@ -22,14 +22,16 @@ export default function DropDownLink({menuOpen, setMenuOpen , links}) {
                   </svg>
                 )
               }
-            </Link>
+            </button>
             {menuOpen ? (
               <Menu1 >
                 {
                     links.sub.map((link, index) => (
+                      
                         <li className="menu-item" key={index}>
                             <button>{link}</button>
                         </li>
+                     
                     ))
                 }
               </Menu1>
