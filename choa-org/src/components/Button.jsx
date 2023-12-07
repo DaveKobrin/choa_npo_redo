@@ -16,7 +16,7 @@ import { PageColors } from '@/styles/globalstyles';
 
 // FIXME: Padding does not currently work, but all other props seem to work fine
 
-const Button = ({ text, bgColor, textColor, borderRadius, fontSize, padding, onClick}) => {
+const Button = ({ text, bgColor, textColor, borderRadius, fontSize, padding, handleClick}) => {
 
 const StyledButton = styled.button`
   background-color: ${(props) => props.bgColor};
