@@ -13,6 +13,12 @@ export default function Telemed() {
                     </p>
                 </HeroBox>
             </HeroContainer>
+            <div className="m-50">
+                <h4>Starting Your Virtual Visit</h4>
+                <GreenBox text='Before a Virtual Visit'/>
+                <GreenBox text='Plan your visit'/>
+                <h4>Questions About Virtual Visits</h4>
+            </div>
         </>
     )
 }
