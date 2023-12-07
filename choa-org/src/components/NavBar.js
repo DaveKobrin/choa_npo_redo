@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
-import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav } from '@/styles/navStyles';
+import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav, Menu1, SearchBox, SearchInput, SearchIcon, LinkBox } from '@/styles/navStyles';
 import Link from 'next/link';
+import DropDownLink from './DropDownLink';
 
 const NavBar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState(false);
+  const [menu1Open, setMenu1Open] = React.useState(false);
+  const [menu2Open, setMenu2Open] = React.useState(false);
+  const [menu3Open, setMenu3Open] = React.useState(false);
+
 
   return (
     <>
     
     <SNav>
       <Logo>
-        <Image src="/choa-logo-color-white.webp" alt="Logo" width={180} height={37} priority />
+        <Image src="/choa-logo-color-white.webp" alt="Logo" width={200} height={37} priority />
       </Logo>
-      <MobileNavToggle onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}>
+      <MobileNavToggle onClick={() => {setIsMobileNavOpen(!isMobileNavOpen)}}>
         {isMobileNavOpen ? 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
                 <title>Close Mobile menu</title>
@@ -27,17 +32,35 @@ const NavBar = () => {
         }
       </MobileNavToggle>
       <DesktopNav>
-        <NavItem><Link href="/">Home</Link></NavItem>
-        <NavItem><Link href="/">About</Link></NavItem>
-        <NavItem><Link href="/">Services</Link></NavItem>
-        <NavItem><Link href="/">Contact</Link></NavItem>
+        <DropDownLink menuOpen={menu1Open} setMenuOpen={setMenu1Open} links={{title: 'PATIENTS & FAMILIES', sub: ['Menu 1', 'Menu 2', 'Menu 3']}} />
+        <DropDownLink menuOpen={menu2Open} setMenuOpen={setMenu2Open} links={{title: 'RESOURCES', sub: ['Menu 1', 'Menu 2', 'Menu 3']}} />
+        <DropDownLink menuOpen={menu3Open} setMenuOpen={setMenu3Open} links={{title: 'HEALTHCARE PROFESSIONALS', sub: ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4','Menu 5']}} />
+        <NavItem>
+          <SearchBox>
+            <SearchInput />
+            <SearchIcon>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+            </SearchIcon>
+          </SearchBox>
+        </NavItem>
       </DesktopNav>
     </SNav>
       <MobileNav style={{ display: isMobileNavOpen ? 'flex' : 'none' }}>
-        <NavItem><Link href="/">Home</Link></NavItem>
-        <NavItem><Link href="/">About</Link></NavItem>
-        <NavItem><Link href="/">Services</Link></NavItem>
-        <NavItem><Link href="/">Contact</Link></NavItem>
+        <NavItem><Link href="/">PATIENTS & FAMILIES</Link></NavItem>
+        <NavItem><Link href="/">RESOURCES</Link></NavItem>
+        <NavItem><Link href="/">HEALTHCARE PROFESSIONALS</Link></NavItem>
+        <NavItem>
+          <SearchBox>
+            <SearchInput />
+            <SearchIcon>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+            </SearchIcon>
+          </SearchBox>
+        </NavItem>
       </MobileNav>
     </>
   );
