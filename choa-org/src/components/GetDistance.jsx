@@ -146,17 +146,8 @@ const GetDistance = () => {
     }
   };
 
+  return hospitalDistances;
 
-  return (
-    <div>
-      <h2>Hospital Distances:</h2>
-      <ul>
-        {hospitalDistances.map((distance, index) => (
-          <li key={index}>Hospital {index + 1}: {distance} miles away</li>
-        ))}
-      </ul>
-    </div>
-  );
 };
 
 export default GetDistance;

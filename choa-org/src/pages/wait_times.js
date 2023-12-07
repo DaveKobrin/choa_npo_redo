@@ -5,7 +5,8 @@ import { SearchInput, SearchIcon } from '@/styles/navStyles';
 import {EmergencySearch, EmergencyInput} from '@/styles/waitPageStyles'
 import { PageColors } from "@/styles/globalstyles";
 import { ParagText, Heading3Title, Heading4Title } from "@/styles/textStyles";
-
+import GetDistance from "@/components/GetDistance";
+import { useState } from 'react'
 import Map from "@/components/Maps";
 import Button from "@/components/Button";
 
@@ -23,9 +24,40 @@ import Button from "@/components/Button";
 
 const WaitTimes = () => {
 
+    const [sortBy, setSortBy] = useState('distance'); // Initial sorting option
+
+    const handleSortChange = (event) => {
+      setSortBy(event.target.value);
+    };
+  
     const handleClick = () => {
         console.log("click click")
     }
+    const renderWaitCards = () => {
+        const distances = GetDistance(); // Assuming GetDistance returns an array of distances
+    
+        return locationAndWaitTimes
+          .filter((location) => location.facilityType === "Emergency Department")
+          .sort((a, b) => {
+            if (sortBy === 'distance') {
+              // Extract distances for locations 'a' and 'b'
+              const distanceA = distances.find(d => d.locationName === a.name);
+              const distanceB = distances.find(d => d.locationName === b.name);
+    
+              // Compare distances
+              return distanceA - distanceB;
+            } else if (sortBy === 'waitTime') {
+              return a.waitTime - b.waitTime; // Assuming waitTime is a numeric property
+            } else {
+              return 0; // Default case, no sorting
+            }
+          })
+          .map((location, idx) => (
+            <WaitCard location={location} key={idx} />
+          ));
+      };
+    
+      const waitCards = renderWaitCards();
 
     return (
         <>
@@ -52,24 +84,28 @@ const WaitTimes = () => {
                         <div>
                             <div className="flex flex-row w-full justify-between px-4 py-5 items-center">
                                 <h4>Emergency Department Wait Times</h4>
-                                <select className="text-black border border-gray-300 p-2">
+                                <select id="sortBy" value={sortBy} onChange={handleSortChange} className="text-black border border-gray-300 p-2">
                                     <option value="" disabled selected>Filter By</option>
                                     <option value="Distance">Distance: Closest to Farthest</option>
-                                    <option value="Wait Times">Wait Times: Low to High</option>
+                                    <option value="WaitTimes">Wait Times: Low to High</option>
                                 </select>
                             </div>
                         {/* Emergency Department Wait Times Section */}
                             <div className="border border-black w-[70vw] overflow-y-scroll h-[264px]">
-                                {locationAndWaitTimes
+                                {/* {locationAndWaitTimes
                                     .filter((location) =>{
                                         return location.facilityType === "Emergency Department"
                                     })
                                     .map((location, idx) => {
                                     return (
                                     <>
+                                        <h1></h1>
                                         <WaitCard location={location} key={idx} />
                                     </>
-                                )})}
+                                )})} */}
+         {waitCards}
+
+                                
                             </div>
                         </div>
                         {/* Urgent Care Wait Times Section */}
