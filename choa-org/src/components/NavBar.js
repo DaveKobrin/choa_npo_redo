@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav, Menu1, SearchBox, SearchInput, SearchIcon, LinkBox } from '@/styles/navStyles';
+import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav, SearchBox, SearchInput, SearchIcon } from '@/styles/navStyles';
 import Link from 'next/link';
 import DropDownLink from './DropDownLink';
 
