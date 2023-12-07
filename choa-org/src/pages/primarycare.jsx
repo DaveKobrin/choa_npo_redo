@@ -15,7 +15,7 @@ const primaryCare = () => {
             alt="Primary Care Doctor"
           />
           {/* Text overlay */}
-          <div className="w-2/4 absolute top-1/2 right-1/2 transform translate-x-16 -translate-y-14 p-20 bg-white rounded bg-opacity-90">
+          <div className="absolute top-1/2 right-1/2 transform -translate-y-1/2 md:w-2/4 p-8 bg-white rounded bg-opacity-90">
             <h2 className="mb-5 text-#285844 text-4xl">Primary Care</h2>
             <p className="text-#5A5A5A">
               Whether your child is sick or due for a well-child visit,
@@ -34,10 +34,11 @@ const primaryCare = () => {
               </div>
           </div>
         </div>
+
+       {/* Location Navigation */}
         <Link href="/"> 
           <h2 className="p-5">Home - Primary Care</h2>
        </Link>
-
 
 
           {/* Primary Services Section */}

@@ -121,9 +121,11 @@ export const DropdownContainer = styled.div`
 
 export const DropdownButton = styled.button`
   background-color: #D0961F;
+  font-family: Inter;
+  border-radius:.1rem;
   color: #FFFFFF;
   padding: 10px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   cursor: pointer;
 `;
 
@@ -135,6 +137,7 @@ export const DropdownContent = styled.div`
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  font-family: Inter;
 `;
 
 

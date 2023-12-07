@@ -1,9 +1,11 @@
 import Image from 'next/image'
+import { PageColors } from "@/styles/globalstyles";
 import { Inter } from 'next/font/google'
 import VisitType from '@/components/visitType'
 import React from 'react';
 import { HeroSection, HeroCard, HeroContent, CardImage, MiddleDiv, ImageContainer} from '../styles/indexherostyles';
 import Dropdown from '../components/ImportantUpdate';
+import Button from "@/components/Button";
 
 
 
@@ -26,6 +28,16 @@ export default function Home() {
           <p className="text-#5A5A5A">Every day we provide nationally-ranked 
           pediatric care to Georgia’s kids and teens,
           so they can get back to just being kids.</p>
+                  <div className="m-1">
+                <Button
+                  text={"DONATE"}
+                  bgColor={PageColors.BUTTON_YELLOW}
+                  textColor={PageColors.TEXT_WHITE}
+                  borderRadius={"2rem"}
+                  fontSize={"0.9375rem"}
+                  padding={".5rem 1rem .5rem 1rem"}
+                />
+              </div>
         </HeroContent>
          <MiddleDiv>
             <ImageContainer>

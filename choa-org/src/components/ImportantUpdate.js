@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import {DropdownContainer, DropdownButton, DropdownContent} from '../styles/indexherostyles';
 
 
