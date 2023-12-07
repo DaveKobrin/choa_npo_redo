@@ -43,7 +43,7 @@ export const MobileNavToggle = styled.button`
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
+  // position: relative;
 
   &:hover {
     color: black;
@@ -78,8 +78,11 @@ export const MobileNav = styled.ul`
   }
 `;
 
-export const Menu1 = styled.ul`
+export const Menu = styled.ul`
   position: absolute;
+  top: 80px;
+  width: 490px;
+  height: 312px;
   color: black;
   padding: 1rem;
   border-radius: 0.5rem;
