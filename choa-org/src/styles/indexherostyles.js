@@ -115,7 +115,7 @@ export const SubA = styled.a`
 
 
 export const DropdownContainer = styled.div`
-  position: relative;
+  position: absolute;
   display: inline-block;
 `;
 
