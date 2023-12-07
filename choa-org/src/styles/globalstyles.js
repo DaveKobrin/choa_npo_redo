@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const PageColors = {
+    NAVBAR_GREEN : "#00A94F",
     MEDIUM_GRAY : "#5a5a5a",
     BACKGROUND_WHITE : "#f5f5f5",
     BACKGROUND_DK_BLUE : "#011626",
