@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const PageColors = {
+    NAVBAR_GREEN        : "#00A94F",
     MEDIUM_GRAY         : "#5a5a5a",
     BACKGROUND_WHITE    : "#f5f5f5",
     BACKGROUND_DK_BLUE  : "#011626",
@@ -33,13 +34,14 @@ export const PageColors = {
     BROWN               : "#2a1c15",
     WINE                : "#BD2F92",
     LT_BLUE             : "#0081C6",
+
 }
 
 export const DeviceSize = {
     mobileS: '320px',
     mobileM: '375px',
     mobileL: '425px',
-    tablet: '768px',
+    tablet : '768px',
     laptopS: '1024px',
     laptopL: '1440px',
     desktop: '1920px'
@@ -49,7 +51,7 @@ export const Device = {
     mobileS: `(min-width: ${DeviceSize.mobileS})`,
     mobileM: `(min-width: ${DeviceSize.mobileM})`,
     mobileL: `(min-width: ${DeviceSize.mobileL})`,
-    tablet : `(min-width: ${DeviceSize.tablet})`,
+    tablet : `(min-width: ${DeviceSize.tablet })`,
     laptopS: `(min-width: ${DeviceSize.laptopS})`,
     laptopL: `(min-width: ${DeviceSize.laptopL})`,
     desktop: `(min-width: ${DeviceSize.desktop})`
