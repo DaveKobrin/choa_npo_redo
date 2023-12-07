@@ -4,6 +4,8 @@ import Urgent from "../../public/urgentcare.png"
 import Primary from "../../public/primarycare.png"
 import Telemed from "../../public/telemed.png"
 import Image from "next/image";
+import Link from "next/link";
+
 
 export default function VisitType(){
     return(
@@ -15,34 +17,35 @@ export default function VisitType(){
        <VisitHead>Visit Type</VisitHead>
        {/* {this div too}   replace this div with a styled component*/}
        <Options>
-            <Option>
-                <Image src={Emergency} alt="Emergency Ambulance"/>
-            </Option>
-               
-            <Option>
-                <Image src={Urgent} alt="Urgent Care"/>
-            </Option>
-           
-            <Option>
-                <Image src={Primary} alt="Primary Care"/>
-            </Option>
-            
+            <Link href="/emergencycare">
+                <Option>
+                    <Image src={Emergency} alt="Emergency Ambulance"/>
+                </Option>
+            </Link>
 
-            <Option>
-                <Image src={Telemed} alt="Telemed"/>
-            </Option>
+            <Link href="/urgentcare">  
+                <Option>
+                    <Image src={Urgent} alt="Urgent Care"/>
+                </Option>
+            </Link> 
+
+            <Link href="/primarycare">
+                <Option>
+                    <Image src={Primary} alt="Primary Care"/>
+                </Option>
+            </Link>
+            
+            <Link href="/telemed">
+                <Option>
+                    <Image src={Telemed} alt="Telemed"/>
+                </Option>
+            </Link>
            
        </Options>
-        {/* <div id="visitType" style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignContent: "space-evenly",
-            
-        }
-        }> */}
+        
             
 
-        {/* </div> */}
+        
       </div>
     )
 }
