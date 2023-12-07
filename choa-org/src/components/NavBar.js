@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav, Menu1, SearchBox, SearchInput, SearchIcon, LinkBox } from '@/styles/navStyles';
+import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav, SearchBox, SearchInput, SearchIcon } from '@/styles/navStyles';
 import Link from 'next/link';
 import DropDownLink from './DropDownLink';
 
@@ -16,7 +16,9 @@ const NavBar = () => {
     
     <SNav>
       <Logo>
-        <Image src="/choa-logo-color-white.webp" alt="Logo" width={200} height={37} priority />
+        <Link href="/">
+          <Image src="/choa-logo-color-white.webp" alt="Logo" width={200} height={37} priority />
+        </Link>
       </Logo>
       <MobileNavToggle onClick={() => {setIsMobileNavOpen(!isMobileNavOpen)}}>
         {isMobileNavOpen ? 

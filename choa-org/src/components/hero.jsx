@@ -25,7 +25,7 @@ export const Hero = (props) => {
     return (
         <>
             <HeroContainer>
-                <Image src={img} layout="fill" objectFit="contain"/>
+                <Image src={img} layout="fill" objectFit="cover"/>
                 <HeroBox>
                     <HeroHead>{head}</HeroHead>
                     <HeroText>{text}</HeroText>
