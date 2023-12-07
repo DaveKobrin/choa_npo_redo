@@ -3,23 +3,29 @@ import { locationAndWaitTimes } from "@/data/locationAndWaitTimes";
 import styled from 'styled-components';
 import { PageColors } from '@/styles/globalstyles';
 
-// TODO: Props need to be:
-// - handleClick?
-// - where to navigate
-// - text
-// - 
+// EXAMPLE:
+    // <Button
+    //     text={"DONATE"}
+    //     bgColor={PageColors.BUTTON_YELLOW}
+    //     textColor={PageColors.TEXT_BLACK}
+    //     borderRadius={"1.5rem"}
+    //     fontSize={"1.25rem"}
+    //     padding={"1rem 2rem"}
+    //     />
 
-const Button = ({ text, bgColor, textColor}) => {
+// FIXME: Padding does not currently work, but all other props seem to work fine
+
+const Button = ({ text, bgColor, textColor, borderRadius, fontSize, padding}) => {
 
 const StyledButton = styled.button`
   background-color: ${(props) => props.bgColor};
   color: ${(props) => props.textColor};
-  text-transform: uppercase;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
+  border-radius: ${(props) => props.borderRadius};
+  padding: ${(props) => props.padding} !important;
+  font-size: ${(props) => props.fontSize};
 `;
 
-  return <StyledButton bgColor={bgColor} textColor={textColor}>{text}</StyledButton>;
+  return <StyledButton bgColor={bgColor} textColor={textColor} borderRadius={borderRadius} fontSize={fontSize} padding={padding}>{text}</StyledButton>;
 };
 
 export default Button;
