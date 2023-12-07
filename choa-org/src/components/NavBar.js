@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav, Menu1, SearchBox, SearchInput, SearchIcon, LinkBox } from '@/styles/navStyles';
 import Link from 'next/link';
+import DropDownLink from './DropDownLink';
 
 const NavBar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState(false);
@@ -9,14 +10,15 @@ const NavBar = () => {
   const [menu2Open, setMenu2Open] = React.useState(false);
   const [menu3Open, setMenu3Open] = React.useState(false);
 
+
   return (
     <>
     
     <SNav>
       <Logo>
-        <Image src="/choa-logo-color-white.webp" alt="Logo" width={180} height={37} priority />
+        <Image src="/choa-logo-color-white.webp" alt="Logo" width={200} height={37} priority />
       </Logo>
-      <MobileNavToggle onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}>
+      <MobileNavToggle onClick={() => {setIsMobileNavOpen(!isMobileNavOpen)}}>
         {isMobileNavOpen ? 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
                 <title>Close Mobile menu</title>
@@ -30,110 +32,9 @@ const NavBar = () => {
         }
       </MobileNavToggle>
       <DesktopNav>
-        <NavItem>
-          <Link
-            className='flex items-center'
-            onClick={()=>setMenu1Open(!menu1Open)}
-            href="/">
-            PATIENTS & FAMILIES
-            {
-                menu1Open ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                  </svg>
-
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-4 h-4 ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-                )
-              }
-            </Link>
-            {menu1Open ? (
-              <Menu1 >
-                <li className="menu-item">
-                  <button>Menu 1</button>
-                </li>
-                <li className="menu-item">
-                  <button>Menu 2</button>
-                </li>
-                <li className="menu-item">
-                  <button>Menu 3</button>
-                </li>
-              </Menu1>
-            ) : null}
-          </NavItem>
-        <NavItem>
-            
-            <Link 
-              className='flex items-center'
-              onClick={()=>setMenu2Open(!menu2Open)}
-              href="/">
-                RESOURCES
-            
-              {
-                menu2Open ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                  </svg>
-
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-4 h-4 ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-                )
-              }
-              </Link>
-            
-            {menu2Open ? (
-              <Menu1 >
-                <li className="menu-item">
-                  <button>Menu 1</button>
-                </li>
-                <li className="menu-item">
-                  <button>Menu 2</button>
-                </li>
-                <li className="menu-item">
-                  <button>Menu 3</button>
-                </li>
-              </Menu1>
-            ) : null}
-        </NavItem>
-        <NavItem>
-          <Link
-          
-            className='flex items-center'
-            onClick={()=>setMenu3Open(!menu3Open)}
-            href="/">
-
-            HEALTHCARE PROFESSIONALS
-            {
-                menu3Open ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                  </svg>
-
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-4 h-4 ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-                )
-              }
-          </Link>
-          {menu3Open ? (
-              <Menu1 >
-                <li className="menu-item">
-                  <button>Menu 1</button>
-                </li>
-                <li className="menu-item">
-                  <button>Menu 2</button>
-                </li>
-                <li className="menu-item">
-                  <button>Menu 3</button>
-                </li>
-              </Menu1>
-            ) : null}
-        </NavItem>
+        <DropDownLink menuOpen={menu1Open} setMenuOpen={setMenu1Open} links={{title: 'PATIENTS & FAMILIES', sub: ['Menu 1', 'Menu 2', 'Menu 3']}} />
+        <DropDownLink menuOpen={menu2Open} setMenuOpen={setMenu2Open} links={{title: 'RESOURCES', sub: ['Menu 1', 'Menu 2', 'Menu 3']}} />
+        <DropDownLink menuOpen={menu3Open} setMenuOpen={setMenu3Open} links={{title: 'HEALTHCARE PROFESSIONALS', sub: ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4','Menu 5']}} />
         <NavItem>
           <SearchBox>
             <SearchInput />
