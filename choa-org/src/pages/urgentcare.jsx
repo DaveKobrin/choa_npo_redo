@@ -1,6 +1,6 @@
 import Map from '../components/Maps'
 import { PageColors } from '@/styles/globalstyles';
-import { Heading3Title } from '@/styles/textStyles';
+import { Heading3Title, ParagText, ParagList } from '@/styles/textStyles';
 import {conditionSeverity} from '../data/conditionSeverity'
 import Button from '@/components/Button';
 
@@ -16,7 +16,7 @@ const urgentCare = () => {
                 {/* Text overlay */}
                 <div className="w-2/4 absolute top-1/2 right-1/2 transform translate-x-16 -translate-y-14 p-20 bg-white rounded bg-opacity-90">
                     <h2>Urgent Care</h2>
-                    <p>Our pediatric Urgent Care Centers are staffed seven days a week with doctors and nurses who are specially trained to treat non-life-threatening illnesses in children and teens.</p>
+                    <ParagText>Our pediatric Urgent Care Centers are staffed seven days a week with doctors and nurses who are specially trained to treat non-life-threatening illnesses in children and teens.</ParagText>
                 </div>
             </div>
 
@@ -34,21 +34,23 @@ const urgentCare = () => {
             {/* Bottom Section / Explanation Section */}
             <div className="flex flex-col items-center mb-32">
                 {/* Urgent Care or Emergency Section */}
-                <div className="w-[750px]">
+                <div className="w-[800px]">
                     <Heading3Title>Should My Child Go to Urgent Care or the Emergency Department?</Heading3Title>
-                    <p>When injuries and illnesses happen, it’s important to know where to take your child.</p>
-                    <p>When your child has a minor injury or illness and your family’s pediatrician is not available, our Urgent Care Centers are here for you, especially on evenings, weekends and holidays.</p>
-                    <p>Our Emergency Departments are open 24 hours a day, seven days a week, when your child has a serious or life-threatening condition.</p>
-                    <p>In case of an urgent concern or emergency, call 911 or go to the nearest emergency department right away.</p>
-                    <p>To help you decide if your child needs urgent care or emergency services, use the chart below.</p>
+                    <div className="mt-10">
+                        <ParagText>When injuries and illnesses happen, it’s important to know where to take your child.</ParagText>
+                        <ParagText>When your child has a minor injury or illness and your family’s pediatrician is not available, our Urgent Care Centers are here for you, especially on evenings, weekends and holidays.</ParagText>
+                        <ParagText>Our Emergency Departments are open 24 hours a day, seven days a week, when your child has a serious or life-threatening condition.</ParagText>
+                        <ParagText>In case of an urgent concern or emergency, call 911 or go to the nearest emergency department right away.</ParagText>
+                        <ParagText>To help you decide if your child needs urgent care or emergency services, use the chart below.</ParagText>
+                    </div>
                 </div>
                 {/* Table Intro*/}
-                <div className="w-[750px] mt">
-                    <p>Find your child’s condition in the list on the right.</p>
-                    <p>On the same line, find the ✘ in one of the columns to the right of the condition. The ✘ will show you if you should take your child to our Urgent Care Center or Emergency Department.</p>
+                <div className="w-[800px] pl-9 mt-5">
+                    <ParagList>Find your child’s condition in the list on the right.</ParagList>
+                    <ParagList>On the same line, find the ✘ in one of the columns to the right of the condition. The ✘ will show you if you should take your child to our Urgent Care Center or Emergency Department.</ParagList>
                 </div>
                 {/* Table */}
-                <div className="container mx-auto p-4">
+                <div className="w-[850px] mt-5">
                     <table className="min-w-full bg-white">
                         <thead>
                             <tr className="text-left">
@@ -92,35 +94,51 @@ const urgentCare = () => {
             
 
             {/* Urgent Care Hours */}
-            <div>
+            <div className="w-[800px] mt-5">
                 <Heading3Title>When Is Children’s Urgent Care Open?</Heading3Title>
-                <p>At our pediatric Urgent Care Centers, no appointment is necessary, and walk-ins are welcome. We’re open seven days a week, including evenings and holidays.</p>
-                <p>Monday-Friday: 11 a.m. to 9 p.m.</p>
-                <p>Saturday and Sunday: 9 a.m. to 7 p.m.</p>
-                <p>Holidays: 9 a.m. to 7 p.m.</p>
-                <p>Holidays include New Year's Day, Martin Luther King Jr. Day, Memorial Day, Fourth of July, Labor Day,Thanksgiving and Christmas Day.</p>
-                <p>We offer holiday hours at the following Urgent Care Centers:</p>
-                <p>Children’s at Chamblee-Brookhaven</p>
-                <p>Children’s at Forsyth</p>
-                <p>Children’s at Hudson Bridge</p>
-                <p>Children’s at Satellite Boulevard</p>
-                <p>Children’s at Town Center</p>
-                <p>Hours may be affected by unanticipated circumstances. Check this webpage for real-time updates. </p>
+                <div className="mt-10">
+                    <ParagText>At our pediatric Urgent Care Centers, no appointment is necessary, and walk-ins are welcome. We’re open seven days a week, including evenings and holidays.</ParagText>
+                    <div className="pl-9">
+                        <ParagList>Monday-Friday: 11 a.m. to 9 p.m.</ParagList>
+                        <ParagList>Saturday and Sunday: 9 a.m. to 7 p.m.</ParagList>
+                        <ParagList>Holidays: 9 a.m. to 7 p.m.</ParagList>
+                    </div>
+                    <ParagText>Holidays include New Year's Day, Martin Luther King Jr. Day, Memorial Day, Fourth of July, Labor Day,Thanksgiving and Christmas Day.</ParagText>
+                    <ParagText>We offer holiday hours at the following Urgent Care Centers:</ParagText>
+                    <div className="pl-9">
+                        <ParagList>Children’s at Chamblee-Brookhaven</ParagList>
+                        <ParagList>Children’s at Forsyth</ParagList>
+                        <ParagList>Children’s at Hudson Bridge</ParagList>
+                        <ParagList>Children’s at Satellite Boulevard</ParagList>
+                        <ParagList>Children’s at Town Center</ParagList>
+                    </div>
+                    <ParagText>Hours may be affected by unanticipated circumstances. Check this webpage for real-time updates. </ParagText>
+                </div>
             </div>
             {/* Why Section */}
-            <div>  
-                <Heading3Title>Why Should You Take Your Child to a Pediatric Urgent Care Center?</Heading3Title>
-                <p>Children are not small adults. Unlike most urgent care centers and retail clinics, our pediatric Urgent Care Centers have doctors and nurses who are specially trained to diagnose and treat your growing child or teen. Our doctors can communicate directly with your child’s doctor, informing him or her of any test results or procedures that were performed so the doctor can update your child’s medical records and provide follow-
-                up care, if needed.</p>
-                <p>Our pediatric Urgent Care Centers offer:</p>
-                <p>A pediatrician on staff</p>
-                <p>Staff specially trained to diagnose and treat children from birth to 18 years old</p>
-                <p>Walk-in hours seven days a week, including evenings and holidays</p>
-                <p>Lab and X-ray services to quickly diagnose your child’s minor illnesses and injuries with up to 50 percent</p>
-                <p>less radiation than some adult facilities</p>
-                <p><span className="text-[#00A94F] font-bold">Fracture care</span> for growing bones, with access to pediatric orthopedic specialists</p>
-                <p>Access to the Children’s network of doctors and pediatric specialists</p>
-                Electronic submission of prescriptions to your pharmacy
+            <div className="flex flex-row w-full justify-center items-center">
+                {/* Text */}
+                <div className="w-[750px] mt-5">  
+                    <Heading3Title>Why Should You Take Your Child to a Pediatric Urgent Care Center?</Heading3Title>
+                    <ParagText>Children are not small adults. Unlike most urgent care centers and retail clinics, our pediatric Urgent Care Centers have doctors and nurses who are specially trained to diagnose and treat your growing child or teen. Our doctors can communicate directly with your child’s doctor, informing him or her of any test results or procedures that were performed so the doctor can update your child’s medical records and provide follow-
+                    up care, if needed.</ParagText>
+                    <ParagText>Our pediatric Urgent Care Centers offer:</ParagText>
+                    <div className="pl-9">
+                        <ParagList>A pediatrician on staff</ParagList>
+                        <ParagList>Staff specially trained to diagnose and treat children from birth to 18 years old</ParagList>
+                        <ParagList>Walk-in hours seven days a week, including evenings and holidays</ParagList>
+                        <ParagList>Lab and X-ray services to quickly diagnose your child’s minor illnesses and injuries with up to 50 percent</ParagList>
+                        <ParagList>less radiation than some adult facilities</ParagList>
+                        <ParagList><span className="text-[#00A94F] font-bold">Fracture care</span> for growing bones, with access to pediatric orthopedic specialists</ParagList>
+                        <ParagList>Access to the Children’s network of doctors and pediatric specialists</ParagList>
+                        <ParagList>Electronic submission of prescriptions to your pharmacy</ParagList>
+                    </div>
+                    {/* Image */}
+                    
+                </div>
+                <div className="">
+                    <img className="" src="doctor_and_child.png" alt="" />
+                </div>
             </div>
 
 
