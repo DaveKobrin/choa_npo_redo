@@ -5,6 +5,7 @@ export const SNav = styled.nav`
   font-size: 14px;
   display: flex;
   padding-right: 72px;
+  align-items: center;
   justify-content: space-between;
   background: linear-gradient(90deg, #00A94F 0%, rgba(100, 188, 109, 0.80) 93.11%);
   color: #fff;
