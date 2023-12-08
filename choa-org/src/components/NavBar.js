@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav, SearchBox, SearchInput, SearchIcon, Menu } from '@/styles/navStyles';
 import Link from 'next/link';
-import DropDownLink from './DropDownLink';
 import {calendar, location, findDoc, portal, nurse, medic, sick, hosp, cases} from '/src/data/icons.js';
 import MainLink from './MainLink';
 import DDMenu from './DDMenu';
