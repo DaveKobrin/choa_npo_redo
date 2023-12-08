@@ -7,7 +7,8 @@ font-size: 24px;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
-
+padding-bottom: 40px;
+padding-top: 60px;
 `;
 
 

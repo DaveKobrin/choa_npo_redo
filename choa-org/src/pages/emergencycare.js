@@ -28,7 +28,7 @@ export default  function EmergencyCare ()
                 return location.facilityType === "Emergency Department";
               })
               .map((location, index) => (
-                <div className="flex w-[43rem] m-4">
+                <div key={index} className="flex w-[43rem] m-4">
                   <LocationWaitCard location={location} />
                 </div>
               ))}
