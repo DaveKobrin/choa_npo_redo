@@ -34,7 +34,7 @@ export const MiddleDiv = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  position: fixed;
+  position: absolute;
 `;
 
 export const HeroCard = styled.div`
@@ -115,7 +115,7 @@ export const SubA = styled.a`
 
 
 export const DropdownContainer = styled.div`
-  position: relative;
+  position: absolute;
   display: inline-block;
 `;
 

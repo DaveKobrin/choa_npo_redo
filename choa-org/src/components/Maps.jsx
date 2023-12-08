@@ -54,7 +54,7 @@ const Map = () => {
 
           const map = new google.maps.Map(mapElement, {
             center: { lat: 33.87, lng: -84.34 },
-            zoom: 9.3,
+            zoom: 8.8,
           });
 
           try {
@@ -121,7 +121,7 @@ const Map = () => {
       );
   }, []);
 
-  return <div id="map" className="h-[600px] w-[600px] rounded"></div>;
+  return <div id="map" className="h-[350px] w-10/12 rounded"></div>;
 };
 
 export default Map;

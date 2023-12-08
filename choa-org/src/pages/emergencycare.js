@@ -1,9 +1,12 @@
 import { locationAndWaitTimes } from "@/data/locationAndWaitTimes";
 import { WaitCard } from "@/components/waitCard";
 import { Heading3Title, ParagText, ParagList } from "@/styles/textStyles";
-import { About, EverythingText, Treatment, Photowrap } from "@/styles/emergencystyles";
+import { About, EverythingText, Treatment, Photowrap, MoreButton, BtnTxt } from "@/styles/emergencystyles";
+import { SvgImg } from "@/components/svgImage";
+
 import Patient from "../../public/patient.png"
 import Image from "next/image";
+import { SvgWrapper } from "@/styles/waitCardStyles";
 
 export default  function EmergencyCare ()
 {
@@ -24,7 +27,7 @@ export default  function EmergencyCare ()
 <About>
 
         <Photowrap>
-            <Image src={Patient}/>
+            <Image src={Patient} height='284' width='284'/>
         </Photowrap>
 
         <EverythingText>
@@ -42,6 +45,10 @@ export default  function EmergencyCare ()
             Call 911 immediately if you think your child’s illness or injury is life-threatening.
         </ParagText>
         {/* drop down goes here VVV */}
+        <SvgWrapper>
+        <span>What we treat <SvgImg iconName="downarrow"/></span>
+        </SvgWrapper>
+        
         </Treatment>
 
 
@@ -52,7 +59,10 @@ export default  function EmergencyCare ()
         <ParagText>
             Learn more about when to take your child to the emergency department instead of an urgent care center.
         </ParagText>
-        <button>Learn More</button>
+
+        <MoreButton>
+            <BtnTxt>Learn More</BtnTxt>
+        </MoreButton>
 
         <Heading3Title>
             Why Should I Take My Child to a Children’s Emergency Department?

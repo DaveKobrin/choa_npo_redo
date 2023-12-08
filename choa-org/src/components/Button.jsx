@@ -5,13 +5,13 @@ import { PageColors } from '@/styles/globalstyles';
 
 // EXAMPLE:
     // <Button
-    //     text={"DONATE"}
-    //     bgColor={PageColors.BUTTON_YELLOW}
-    //     textColor={PageColors.TEXT_BLACK}
-    //     borderRadius={"1.5rem"}
-    //     fontSize={"1.25rem"}
-    //     padding={"1rem 2rem"}
-    //     handleClick={handleClick}
+        // text={"DONATE"}
+        // bgColor={PageColors.BUTTON_YELLOW}
+        // textColor={PageColors.TEXT_BLACK}
+        // borderRadius={"1.5rem"}
+        // fontSize={"1.25rem"}
+        // padding={"1rem 2rem"}
+        // handleClick={handleClick}
     //     />
 
 // FIXME: Padding does not currently work, but all other props seem to work fine

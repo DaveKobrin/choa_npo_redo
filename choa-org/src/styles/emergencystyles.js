@@ -26,6 +26,8 @@ export const EverythingText = styled.div`
 // width: 60vw;
 // margin: 1rem auto;
 margin-left: 64px;
+margin-right: 625px;
+border: 1px solid red;
 `
 export const PageHalves = styled.div`
 display: flex;
@@ -37,14 +39,32 @@ justify-content: center;
 export const About = styled.div`
 display: flex;
 flex-direction: row-reverse;
-gap: 500px;
 `
 export const Photowrap = styled.div`
+float: left;
+border: 1px solid red;
 
-background-size: cover;
-background-repeat: no-repeat;
-background-position: center;
-height: 500px;
-margin-top: 10px;
-position: relative;
+`
+export const MoreButton = styled.button`
+display: inline-flex;
+padding: 10px 20px;
+justify-content: center;
+align-items: center;
+gap: 20px;
+border-radius: 45px;
+background: #27935A;
+`
+export const BtnTxt = styled.p`
+color: #FFF;
+text-align: center;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+`
+
+const SvgWrapper = styled.div`
+display: flex;
+flex-direction: row;
 `

@@ -1,9 +1,23 @@
 import styled from 'styled-components';
 import { PageColors } from './globalstyles';
 
+
+export const Heading1Title = styled.h1`
+    color: #285844;
+    font-size: 3rem;
+    line-height: 3.51rem;
+`;
+
 export const Heading3Title = styled.h3`
     color: #285844;
     font-size: 1.625rem;
+    font-weight: 500;
+    line-height: 2.16125rem;
+`;
+
+export const Heading4Title = styled.h3`
+    color: #285844;
+    font-size: 1.5rem;
     font-weight: 500;
     line-height: 2.16125rem;
 `;
