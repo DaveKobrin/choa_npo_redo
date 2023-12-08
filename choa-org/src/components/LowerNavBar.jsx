@@ -10,7 +10,7 @@ const LowerNavBar = () => {
     const handleClick = () => {
         console.log("click click")
     }
-
+    
     return (
       <>
         <div className="min-w-screen bg-[#F5F5F5] h-[3.5rem] justify-center">
@@ -20,7 +20,7 @@ const LowerNavBar = () => {
                 <Link href="/"><h3 className="text-sm inline-block border-b-2 border-transparent hover:border-black">MAKE AN APPOINTMENT</h3></Link>
                 <Link href="/"><h3 className="text-sm inline-block border-b-2 border-transparent hover:border-black">FIND A DOCTOR</h3></Link>
                 <Link href="/"><h3 className="text-sm inline-block border-b-2 border-transparent hover:border-black">FIND A LOCATION</h3></Link>
-                <button className={`bg-[#27935A] text-white rounded-[2.8125rem] py-[0.625rem] px-[1.25rem] text-xs`} onClick={handleClick} >MYCHART LOG IN</button>
+                <button className={`bg-[#27935A] hover:bg-[#247F4F] text-white rounded-[2.8125rem] py-[0.625rem] px-[1.25rem] text-xs`} onClick={handleClick} >MYCHART LOG IN</button>
             </div>
         </div>
       </>

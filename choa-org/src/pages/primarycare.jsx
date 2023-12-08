@@ -86,6 +86,7 @@ const primaryCare = () => {
                   text={"MAKE AN APPOINTMENT"}
                   bgColor={PageColors.BUTTON_GREEN}
                   textColor={PageColors.TEXT_WHITE}
+                  hoverBgColor={PageColors.BUTTON_DK_GREEN}
                   borderRadius={"2.5rem"}
                   fontSize={"0.9375rem"}
                   padding={"1rem 2rem 1rem 2rem"}
@@ -178,6 +179,7 @@ const primaryCare = () => {
                   text={"LEARN MORE"}
                   bgColor={PageColors.BUTTON_GREEN}
                   textColor={PageColors.TEXT_WHITE}
+                  hoverBgColor={PageColors.BUTTON_DK_GREEN}
                   borderRadius={"2.5rem"}
                   fontSize={"0.9375rem"}
                   padding={"1rem 2rem 1rem 2rem"}

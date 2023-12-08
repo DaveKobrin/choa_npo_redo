@@ -28,14 +28,17 @@ export default function Home() {
           <p className="text-#5A5A5A">Every day we provide nationally-ranked 
           pediatric care to Georgia&apos;s kids and teens,
           so they can get back to just being kids.</p>
-          <Button
-              text={"DONATE"}
-              bgColor={PageColors.BUTTON_YELLOW}
-              textColor={PageColors.TEXT_BLACK}
-              borderRadius={"2.5rem"}
-              fontSize={"0.9375rem"}
-              padding={".5rem 1rem .5rem 1rem"}
-                />
+          <div className="my-3">
+            <Button
+                text={"DONATE"}
+                bgColor={PageColors.BUTTON_YELLOW}
+                textColor={PageColors.TEXT_BLACK}
+                hoverTextColor={PageColors.TEXT_WHITE}
+                borderRadius={"2.5rem"}
+                fontSize={"0.9375rem"}
+                padding={".5rem 1rem .5rem 1rem"}
+                  />
+          </div>
         </HeroContent>
          <MiddleDiv>
             <ImageContainer>
