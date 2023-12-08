@@ -136,7 +136,10 @@ const GetDistance = () => {
             lng: results[index].position.lng(),
           };
 
-          return calculateDistance(userLocation, hospitalLocation);
+          return {
+            locationName: hospital.name,
+            distance: calculateDistance(userLocation, hospitalLocation)
+          }
         });
 
         setHospitalDistances(updatedDistances);

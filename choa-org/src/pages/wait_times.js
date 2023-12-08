@@ -23,41 +23,101 @@ import Button from "@/components/Button";
 // - be able to sort by 1. distance from user and 2. ??? wait times I think?
 
 const WaitTimes = () => {
+    const [distances, setDistances] = useState([]);
 
-    const [sortBy, setSortBy] = useState('distance'); // Initial sorting option
 
-    const handleSortChange = (event) => {
-      setSortBy(event.target.value);
+    // FIXME: Put all of this sort functionality into a reusable component
+    const [sortBy1, setSortBy1] = useState('Distance'); // Initial sorting option
+    const [sortBy2, setSortBy2] = useState('Distance'); // Initial sorting option
+
+    const handleSortChange1 = (event) => {
+      setSortBy1(event.target.value);
     };
+
+    const handleSortChange2 = (event) => {
+        setSortBy2(event.target.value);
+      };
   
     const handleClick = () => {
         console.log("click click")
     }
-    const renderWaitCards = () => {
-        const distances = GetDistance(); // Assuming GetDistance returns an array of distances
+    const renderWaitCards1 = () => {
+        const distances = GetDistance(); 
     
         return locationAndWaitTimes
           .filter((location) => location.facilityType === "Emergency Department")
           .sort((a, b) => {
-            if (sortBy === 'distance') {
-              // Extract distances for locations 'a' and 'b'
-              const distanceA = distances.find(d => d.locationName === a.name);
-              const distanceB = distances.find(d => d.locationName === b.name);
+            console.log("a, b: ", JSON.stringify(a) + ", " + JSON.stringify(b))
+            if (sortBy1 === 'Distance') {
+
+             const distanceAObject = distances.find(d => d.locationName === a.name);
+            const distanceBObject = distances.find(d => d.locationName === b.name);
+
+            const distanceA = distanceAObject ? distanceAObject.distance : null;
+            const distanceB = distanceBObject ? distanceBObject.distance : null;
+              console.log("distance A: " + JSON.stringify(distanceA))
+              console.log("distance B: " + JSON.stringify(distanceB))
     
               // Compare distances
               return distanceA - distanceB;
-            } else if (sortBy === 'waitTime') {
-              return a.waitTime - b.waitTime; // Assuming waitTime is a numeric property
+            } else if (sortBy1 === 'WaitTimes') {
+              return a.waitTime - b.waitTime;
             } else {
-              return 0; // Default case, no sorting
+              return 0;
             }
           })
-          .map((location, idx) => (
-            <WaitCard location={location} key={idx} />
-          ));
+          .map((location, idx) => {
+            const distance = distances.find(d => d.locationName === location.name)?.distance;
+            return(
+                <>
+                    <h1>{location.name}</h1>
+                    <h1>{distance} miles away</h1>
+                    <WaitCard location={location} key={idx} />
+                </>
+            )   
+    });
+      };
+
+      const renderWaitCards2 = () => {
+        const distances = GetDistance(); 
+    
+        return locationAndWaitTimes
+          .filter((location) => location.facilityType === "Urgent Care Center")
+          .sort((a, b) => {
+            console.log("a, b: ", JSON.stringify(a) + ", " + JSON.stringify(b))
+            if (sortBy2 === 'Distance') {
+
+             const distanceAObject = distances.find(d => d.locationName === a.name);
+            const distanceBObject = distances.find(d => d.locationName === b.name);
+
+            const distanceA = distanceAObject ? distanceAObject.distance : null;
+            const distanceB = distanceBObject ? distanceBObject.distance : null;
+              console.log("distance A: " + JSON.stringify(distanceA))
+              console.log("distance B: " + JSON.stringify(distanceB))
+    
+              // Compare distances
+              return distanceA - distanceB;
+            } else if (sortBy2 === 'WaitTimes') {
+              return a.waitTime - b.waitTime;
+            } else {
+              return 0;
+            }
+          })
+          .map((location, idx) => {
+            const distance = distances.find(d => d.locationName === location.name)?.distance;
+            return(
+                <>
+                    <h1>{location.name}</h1>
+                    <h1>{distance} miles away</h1>
+                    <WaitCard location={location} key={idx} />
+                </>
+            )   
+    });
       };
     
-      const waitCards = renderWaitCards();
+      const waitCards1 = renderWaitCards1();
+
+      const waitCards2 = renderWaitCards2();
 
     return (
         <>
@@ -84,7 +144,7 @@ const WaitTimes = () => {
                         <div>
                             <div className="flex flex-row w-full justify-between px-4 py-5 items-center">
                                 <h4>Emergency Department Wait Times</h4>
-                                <select id="sortBy" value={sortBy} onChange={handleSortChange} className="text-black border border-gray-300 p-2">
+                                <select id="sortBy1" value={sortBy1} onChange={handleSortChange1} className="text-black border border-gray-300 p-2">
                                     <option value="" disabled selected>Filter By</option>
                                     <option value="Distance">Distance: Closest to Farthest</option>
                                     <option value="WaitTimes">Wait Times: Low to High</option>
@@ -92,43 +152,21 @@ const WaitTimes = () => {
                             </div>
                         {/* Emergency Department Wait Times Section */}
                             <div className="border border-black w-[70vw] overflow-y-scroll h-[264px]">
-                                {/* {locationAndWaitTimes
-                                    .filter((location) =>{
-                                        return location.facilityType === "Emergency Department"
-                                    })
-                                    .map((location, idx) => {
-                                    return (
-                                    <>
-                                        <h1></h1>
-                                        <WaitCard location={location} key={idx} />
-                                    </>
-                                )})} */}
-         {waitCards}
-
-                                
+                                {waitCards1}
                             </div>
                         </div>
                         {/* Urgent Care Wait Times Section */}
                         <div>
                             <div className="flex flex-row w-full justify-between px-4 py-5 items-center mt-7">
                                 <h4>Urgent Care Wait Times</h4>
-                                <select className="text-black border border-gray-300 p-2">
+                                <select id="sortBy2" value={sortBy2} onChange={handleSortChange2} className="text-black border border-gray-300 p-2">
                                     <option value="" disabled selected>Filter By</option>
                                     <option value="Distance">Distance: Closest to Farthest</option>
-                                    <option value="Wait Times">Wait Times: Low to High</option>
+                                    <option value="WaitTimes">Wait Times: Low to High</option>
                                 </select>
                             </div>
                             <div className="border border-black w-[70vw] overflow-y-scroll h-[264px]">
-                                {locationAndWaitTimes
-                                    .filter((location) =>{
-                                        return location.facilityType === "Urgent Care Center"
-                                    })
-                                    .map((location, idx) => {
-                                    return (
-                                    <>
-                                        <WaitCard location={location} key={idx} />
-                                    </>
-                                )})}
+                                {waitCards2}
                             </div>
                         </div>
                     </div>
