@@ -19,25 +19,25 @@ export default function VisitType(){
        <Options>
             <Link href="/emergencycare">
                 <Option>
-                    <Image src={Emergency} alt="Emergency Ambulance"/>
+                    <Image className="hover:opacity-80" src={Emergency} alt="Emergency Ambulance"/>
                 </Option>
             </Link>
 
             <Link href="/urgentcare">  
                 <Option>
-                    <Image src={Urgent} alt="Urgent Care"/>
+                    <Image className="hover:opacity-80" src={Urgent} alt="Urgent Care"/>
                 </Option>
             </Link> 
 
             <Link href="/primarycare">
                 <Option>
-                    <Image src={Primary} alt="Primary Care"/>
+                    <Image className="hover:opacity-80" src={Primary} alt="Primary Care"/>
                 </Option>
             </Link>
             
             <Link href="/telemed">
                 <Option>
-                    <Image src={Telemed} alt="Telemed"/>
+                    <Image className="hover:opacity-80" src={Telemed} alt="Telemed"/>
                 </Option>
             </Link>
            
