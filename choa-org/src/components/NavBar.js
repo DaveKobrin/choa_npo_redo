@@ -4,11 +4,11 @@ import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav, SearchBox,
 import Link from 'next/link';
 import DropDownLink from './DropDownLink';
 import {calendar, location, findDoc, portal, nurse, medic, sick, hosp, cases} from '/src/data/icons.js';
-
+import MainLink from './MainLink';
+import DDMenu from './DDMenu';
 
 const NavBar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState(false);
-  const [menuOpen, setMenuOpen] = React.useState(false);
   const [menu1Open, setMenu1Open] = React.useState(false);
   const [menu2Open, setMenu2Open] = React.useState(false);
   const [menu3Open, setMenu3Open] = React.useState(false);
@@ -163,220 +163,84 @@ const NavBar = () => {
         }
       </MobileNavToggle>
       <DesktopNav>
-      <NavItem>
-          <button
-            className='flex items-center relative'
-            onClick={()=>{
-              setMenu1Open(!menu1Open)
-              setMenu2Open(false)
-              setMenu3Open(false)
-            }}
-            >
-            PATIENTS & FAMILIES
-            {
-                menu1Open ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3 h-3 ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                  </svg>
-
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-3 h-3 ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-                )
-              }
-              {
-                menu1Open ? 
-                  <div className="w-0 h-0 top-5 right-3 absolute
-                  border-l-[50px] border-l-transparent
-                  border-b-[75px] border-b-white
-                  border-r-[50px] border-r-transparent ">
-                </div>
-                :
-                null
-            }
-            </button>
-            
-        </NavItem>
-      <NavItem>
-          <button
-            className='flex items-center relative'
-            onClick={()=>{
-              setMenu2Open(!menu2Open)
-              setMenu1Open(false)
-              setMenu3Open(false)
-            }}
-            >
-            RESOURCES
-            {
-                menu2Open ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3 h-3 ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                  </svg>
-
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-3 h-3 ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-                )
-              }
-              {
-                menu2Open ? 
-                  <div className="w-0 h-0 top-5 right-3 absolute
-                  border-l-[50px] border-l-transparent
-                  border-b-[75px] border-b-white
-                  border-r-[50px] border-r-transparent ">
-                </div>
-                :
-                null
-            }
-            </button>
-            
-        </NavItem>
-      <NavItem>
-          <button
-            className='flex items-center relative'
-            onClick={()=>{
-              setMenu3Open(!menu3Open)
-              setMenu1Open(false)
-              setMenu2Open(false)
-            }}
-            >
-            HEALTHCARE PROFESSIONALS
-            {
-                menu3Open ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3 h-3 ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                  </svg>
-
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-3 h-3 ml-2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-                )
-              }
-              {
-                menu3Open ? 
-                  <div className="w-0 h-0 top-5 right-3 absolute
-                  border-l-[50px] border-l-transparent
-                  border-b-[75px] border-b-white
-                  border-r-[50px] border-r-transparent ">
-                </div>
-                :
-                null
-            }
-            </button>
-            
-        </NavItem>
+        <MainLink 
+          pos={10}
+          title='PATIENTS & FAMILIES'
+          menuOpen = {menu1Open}
+          setMenuOpen = {setMenu1Open}
+          setMenu2Open = {setMenu2Open}
+          setMenu3Open = {setMenu3Open}
+        />
+        <MainLink 
+          pos={3}
+          title='RESOURCES'
+          menuOpen = {menu2Open}
+          setMenuOpen = {setMenu2Open}
+          setMenu2Open = {setMenu1Open}
+          setMenu3Open = {setMenu3Open}
+        />
+        <MainLink 
+          pos={20}
+          title='HEALTHCARE PROFESSIONALS'
+          menuOpen = {menu3Open}
+          setMenuOpen = {setMenu3Open}
+          setMenu2Open = {setMenu1Open}
+          setMenu3Open = {setMenu2Open}
+        />
+      
         {menu1Open ? (
-              <>
               
-              <Menu >
-                <div className='flex justify-between'>
-                  <div className='flex'>
-                    <h5>PATIENTS & FAMILIES</h5>
-                    <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-3 h-3 ml-2 mt-1">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                    </svg>
-                  </div>
-                  <div className='cursor-pointer' onClick={closeMenu}>
-                    <Image src={'/close_icon.png'} alt="logo" width={20} height={20} />
-                  </div>
-                </div>
-                <div className="grid grid-cols-3 mt-8">
-                    <div>
-                      {main1linkList}
-                    </div>
-                    <div >
-                      <div className='border-l-2 border-[#00A94F] pl-6' >
-                        <h6 className='text-base mt-5'>{titlesub1}</h6>
-                        {sub1}
-                        <h6 className='text-base mt-5'>{titlesub2}</h6>
-                        {sub2}
-                      
-                      </div>
-                    </div>
-                    <div>
-                      <h6 className='text-base mt-5'>{titlesub3}</h6>
-                      {sub3}
-                    </div>
-                </div>
-                
-                
-              </Menu>
-            </>
+              <DDMenu 
+                title='PATIENTS & FAMILIES'
+                menuOpen = {menu1Open}
+                setMenuOpen = {setMenu1Open}
+                setMenu2Open = {setMenu2Open}
+                setMenu3Open = {setMenu3Open}
+                main1linkList={main1linkList}
+                titlesub1 = {titlesub1}
+                sub1 = {sub1}
+                titlesub2 = {titlesub2}
+                sub2 = {sub2}
+                titlesub3 = {titlesub3}
+                sub3 = {sub3}
+              />
+              
             ) : null}
         {menu2Open ? (
-              <>
               
-              <Menu >
-                <div className='flex justify-between'>
-                  <div className='flex'>
-                    <h5>RESOURCES</h5>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-3 h-3 ml-2 mt-1">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                    </svg>
-                  </div>
-                  <div className='cursor-pointer' onClick={closeMenu}>
-                    <Image src={'/close_icon.png'} alt="logo" width={20} height={20} />
-                  </div>
-                </div>
-                <div className="grid grid-cols-3 mt-8">
-                    <div>
-                      {main2linkList}
-                    </div>
-                    <div >
-                      <div className='border-l-2 border-[#00A94F] pl-6' >
-                      <h6 className='text-base mt-5'>{titlesub3}</h6>
-                      {sub3}
-                      
-                      </div>
-                    </div>
-                    <div>
-                      
-                    </div>
-                </div>
-                
-                
-              </Menu>
-            </>
+              <DDMenu 
+                title='RESOURCES'
+                menuOpen = {menu2Open}
+                setMenuOpen = {setMenu2Open}
+                setMenu2Open = {setMenu1Open}
+                setMenu3Open = {setMenu3Open}
+                main1linkList={main2linkList}
+                titlesub1 = {titlesub1}
+                sub1 = {sub1}
+                titlesub2 = {titlesub2}
+                sub2 = {sub2}
+                titlesub3 = {titlesub3}
+                sub3 = {sub3}
+              />
+              
             ) : null}
         {menu3Open ? (
-              <>
+             
+              <DDMenu 
+                title='HEALTHCARE PROFESSIONALS'
+                menuOpen = {menu3Open}
+                setMenuOpen = {setMenu3Open}
+                setMenu2Open = {setMenu1Open}
+                setMenu3Open = {setMenu2Open}
+                main1linkList={main3linkList}
+                titlesub1 = {titlesub1}
+                sub1 = {sub1}
+                titlesub2 = {titlesub2}
+                sub2 = {sub2}
+                titlesub3 = {titlesub3}
+                sub3 = {sub3}
+              />
               
-              <Menu >
-                <div className='flex justify-between'>
-                  <div className='flex'>
-                    <h5>HEALTHCARE PROFESSIONALS</h5>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-3 h-3 ml-2 mt-1">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                    </svg>
-                  </div>
-                  <div className='cursor-pointer' onClick={closeMenu}>
-                    <Image src={'/close_icon.png'} alt="logo" width={20} height={20} />
-                  </div>
-                </div>
-                <div className="grid grid-cols-3 mt-8">
-                    <div>
-                      {main3linkList}
-                    </div>
-                    <div >
-                      <div className='border-l-2 border-[#00A94F] pl-6' >
-                        <h6 className='text-base mt-5'>Resources</h6>
-                        {sub1}
-                        
-                      
-                      </div>
-                    </div>
-                    <div>
-                      <h6 className='text-base mt-5'>Education</h6>
-                      {sub3}
-                    </div>
-                </div>
-                
-                
-              </Menu>
-            </>
             ) : null}
         
         <NavItem>
