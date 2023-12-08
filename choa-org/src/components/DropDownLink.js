@@ -5,21 +5,7 @@ import {calendar, location, findDoc, portal} from '/src/data/icons.js';
 
 export default function DropDownLink({menuOpen, setMenuOpen, title}) {
 
- 
 
-  // const sub1liks = links.sub1.map((link) => {
-  //   return (
-  //     <div>
-  //       <h6>{link.title}</h6>
-  //       {link.links.map((link) => {
-  //         return (
-  //           <Link className='text-black' href={link.href}>
-  //             {link.title}
-  //           </Link>
-  //         )
-  //       })}
-  //     </div>
-  //   )})
   
   const  main = [
       {icon:calendar,title:'Request an appointment',href:'#'},
@@ -29,19 +15,15 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
     ]
   const mainlinkList = main.map((link) => {
     return (
-      <div className='flex items-center mt-5'>
-        <div className='m-1'>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-                </svg>
-        </div>
-        
-        <p className='text-black'>
-          {link.title}
-        </p>
-      </div>
+      <table className='m-3'>
+        <tr >
+          <td className='w-9'>{link.icon}</td>
+          <td className='pl-4 pb-2 pt-2'>{link.title}</td>
+        </tr>
+      </table>
     )
   })
+  
   const titlesub1 = 'Services'
   const  linkssub1=[
         {title:'Medical Services',href:'#'},
@@ -49,22 +31,52 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
         {title:'Conditions & Treatments',href:'#'},
         {title:'Programs',href:'#'},
       ]
+  const sub1 = linkssub1.map((link) => {
+    return (
+      <div  className='flex-col'>
+        <Link className='text-xs' href={link.href}>
+          <span className='text-black'>{link.title}</span>
+        </Link>
+    </div>
+    )
+  })
   const titlesub2 = 'Visit Types'
   const  linkssub2= [
         {title:'Emergency',href:'#'},
         {title:'Urgent Care',href:'#'},
         {title:'Primary Care',href:'#'},
-        {title:'Telemed',href:'#'},
+        {title:'Telemed',href:'/telemed'},
       ]
-      
+  const sub2 = linkssub2.map((link) => {
+    return (
+      <div  className='flex-col'>
+      <Link className='text-xs' href={link.href}>
+        <span className='text-black'>{link.title}</span>
+      </Link>
+    </div>
+    )
+  }) 
   const titlesub3 = 'Resources'
-  const linksub3 = [
-        {title:'Emergency',href:'#'},
-        {title:'Urgent Care',href:'#'},
-        {title:'Primary Care',href:'#'},
-        {title:'Telemed',href:'#'},
+  const linkssub3 = [
+        {title:'Health Education',href:'#'},
+        {title:'What to Expect',href:'#'},
+        {title:'Medical Records',href:'#'},
+        {title:'Finance & Billing',href:'#'},
+        {title:'Visitor info',href:'#'},
+        {title:'Volunteering & Fundraising',href:'#'},
       ]
-      
+
+  const sub3 = linkssub3.map((link) => {
+    return (
+      <div  className='flex-col'>
+        <Link className='text-xs' href={link.href}>
+          <span className='text-black'>{link.title}</span>
+        </Link>
+      </div>
+        
+    )
+  })
+  
       
 
     
@@ -89,28 +101,40 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
               }
             </button>
             {menuOpen ? (
+              <>
+              <div className="w-0 h-0 absolute
+                  border-l-[50px] border-l-transparent
+                  border-b-[75px] border-b-white
+                  border-r-[50px] border-r-transparent ">
+                </div>
               <Menu >
+                
                 <h5>{title}</h5>
-                <div className="grid grid-cols-3 ">
+                <div className="grid grid-cols-3 mt-8">
                     <div>
                       
                       {mainlinkList}
                     </div>
                     <div >
-                      <div className='border-x-gray-600'>
-
-                      second column
+                      <div className='border-l-2 border-[#00A94F] pl-6' >
+                        <h6 className='text-base mt-5'>{titlesub1}</h6>
+                        {sub1}
+                        <h6 className='text-base mt-5'>{titlesub2}</h6>
+                        {sub2}
+                      
                       </div>
                     </div>
                     <div>
-                      third column
+                      <h6 className='text-base mt-5'>{titlesub3}</h6>
+                      {sub3}
                     </div>
                 </div>
                 
                 
               </Menu>
+            </>
             ) : null}
           </NavItem>
         
-    )
-}
+        )
+      }

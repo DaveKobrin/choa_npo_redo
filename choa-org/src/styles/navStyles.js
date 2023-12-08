@@ -80,9 +80,9 @@ export const MobileNav = styled.ul`
 
 export const Menu = styled.ul`
   position: absolute;
-  top: 80px;
-  width: 490px;
-  height: 312px;
+  top: 65px;
+  width: 630px;
+  height: 380px;
   color: black;
   padding: 1rem;
   border-radius: 0.5rem;
