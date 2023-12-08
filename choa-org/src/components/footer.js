@@ -39,9 +39,9 @@ export default function Footer() {
                         <UpperUList>
                             <Link href="#"><UpperListItem>Find a Doctor</UpperListItem></Link>
                             <Link href="#"><UpperListItem>Find a Location</UpperListItem></Link>
-                            <Link href="#"><UpperListItem>Children's Physician Group</UpperListItem></Link>
+                            <Link href="#"><UpperListItem>Children&apos;s Physician Group</UpperListItem></Link>
                             <Link href="#"><UpperListItem>Sign in to MyChart</UpperListItem></Link>
-                            <Link href="#"><UpperListItem>Children's Doctor Directory</UpperListItem></Link>
+                            <Link href="#"><UpperListItem>Children&apos;s Doctor Directory</UpperListItem></Link>
                         </UpperUList>
                     </RightDiv>
                 </RightDiv>
@@ -55,7 +55,7 @@ export default function Footer() {
                         </NoticesUL>
                     </NoticesDiv>
                     <BoilerPlateDiv>
-                        <p>©2023 Children's Healthcare of Atlanta Inc. All Rights Reserved. Children's Healthcare of Atlanta is a not-for-profit, section 501(c)(3). EIN 58-2367819</p>
+                        <p>©2023 Children&apos;s Healthcare of Atlanta Inc. All Rights Reserved. Children&apos;s Healthcare of Atlanta is a not-for-profit, section 501(c)(3). EIN 58-2367819</p>
                     </BoilerPlateDiv>
                     <SocialDiv>
                         <SocialUL>
