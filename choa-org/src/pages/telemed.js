@@ -51,7 +51,7 @@ export default function Telemed() {
                     </li>
                     <li className="bg-green-600 bg-opacity-20 mt-5 p-5">
                         <ul className="list-disc ml-5">
-                            <li>Upload your child's insurance information. (You will only need to do this for your child's first visit.)</li>
+                            <li>Upload your child&apos;s insurance information. (You will only need to do this for your child&apos;s first visit.)</li>
                         </ul>
                     </li>
                     <li className="bg-green-600 bg-opacity-20 mt-5 p-5">
@@ -65,13 +65,13 @@ export default function Telemed() {
                             <p>Consent Telehealth</p>
                             <span className="text-green-600 font-semibold">MYC Proxy Authorization Form(en Español)</span>
                             : This form allows us to confirm your identity as the
-                            child's legal guardian in order to gain access to MYchart.
+                            child&apos;s legal guardian in order to gain access to MYchart.
                             </li>
                         </ul>
                     </li>
                     
                 </ul>
-                <p className="font-semibold mt-5 mb-5">If not previously completed, we will need to confirm your identity as the child's legal guardian. You will
+                <p className="font-semibold mt-5 mb-5">If not previously completed, we will need to confirm your identity as the child&apos;s legal guardian. You will
                     receive an email directing you to login to MYchart.</p>
                 <div className="grid grid-cols-2 ">
                     <div >
