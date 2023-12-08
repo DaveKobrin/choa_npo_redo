@@ -122,7 +122,7 @@ export const DropdownContainer = styled.div`
 export const DropdownButton = styled.button`
   background-color: #D0961F;
   color: #FFFFFF;
-  padding: 10px;
+  padding: 3px 10px;
   border: 1px solid #ccc;
   cursor: pointer;
 `;
