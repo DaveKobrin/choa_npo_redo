@@ -11,6 +11,7 @@ const primaryCare = () => {
 
         {/* Hero section */}
         <Hero img="/primary_care_hero_image.png"
+          alt="Primary Care Doctor"
           head="Primary Care"
           text="Whether your child is sick or due for a well-child visit,
           you can feel confident in knowing our Primary Care
