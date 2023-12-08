@@ -34,7 +34,8 @@ export const PageColors = {
     BROWN               : "#2a1c15",
     WINE                : "#BD2F92",
     LT_BLUE             : "#0081C6",
-    BLACK_TRANS_25      : "#0000003f"
+    BLACK_TRANS_25      : "#0000003f",
+    WHITE_TRANS_75      : "#ffffffbf",
 
 }
 
