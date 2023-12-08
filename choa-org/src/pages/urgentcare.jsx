@@ -9,7 +9,6 @@ const urgentCare = () => {
   return (
     <>
       <div className="max-w-screen min-h-screen">
-        <h2 className="p-5">Home - Urgent Care</h2>
         {/* Hero section */}
         <div className="relative w-screen">
           <img
@@ -18,8 +17,8 @@ const urgentCare = () => {
             alt="smiling child"
           />
           {/* Text overlay */}
-          <div className="w-5/12 absolute top-[200px] left-[40px] transform translate-x-16 -translate-y-14 p-20 bg-white rounded bg-opacity-90">
-            <h2>Urgent Care</h2>
+          <div className="max-w-[700px] absolute top-[150px] left-[20px] transform translate-x-16 -translate-y-14 p-14 bg-white rounded bg-opacity-90">
+            <h2 className="text-[#285844] text-[3.5rem]">Urgent Care</h2>
             <ParagText>
               Our pediatric Urgent Care Centers are staffed seven days a week
               with doctors and nurses who are specially trained to treat
@@ -27,9 +26,10 @@ const urgentCare = () => {
             </ParagText>
           </div>
         </div>
+        <h5 className="p-5 flex"><span className="text-[#00A94F] ">Home</span> <img className="h-[12px] self-center mx-2" src="/Vector_babyarrow.png"/> Urgent Care</h5>
 
         {/* -- Wait Times Section -- */}
-        <div className="flex flex-col w-full justify-center items-center mt-32 mb-5 bg-green-500">
+        <div className="flex flex-col w-full justify-center items-center mt-32 mb-5 ">
           <div className="max-w-[1600px] flex flex-row flex-wrap justify-center">
             {locationAndWaitTimes
               .filter((location) => {
@@ -61,10 +61,10 @@ const urgentCare = () => {
                   <th className="py-1 px-4 border-black border-2">
                     Conditions*
                   </th>
-                  <th className="py-1 px-4 border-black border-2">
+                  <th className="py-1 px-4 text-center border-black border-2">
                     Urgent Care Center
                   </th>
-                  <th className="py-1 px-4 border-black border-2">
+                  <th className="py-1 px-4 text-center border-black border-2">
                     Emergency Department
                   </th>
                 </tr>
@@ -116,9 +116,9 @@ const urgentCare = () => {
                   <h4 className="text-[1.5rem]">Urgent Care Hours</h4>
                   <p className="mt-4">no appointment is necessary, and walk-ins are welcome</p>
                   <div className="my-5">
-                    <p>Monday-Friday: 11 a.m. to 9 p.m.</p>
-                    <p>Saturday and Sunday: 9 a.m. to 7 p.m.</p>
-                    <p>Holidays: 9 a.m. to 7 p.m.</p>
+                    <p className="font-medium">Monday-Friday: 11 a.m. to 9 p.m.</p>
+                    <p className="font-medium">Saturday and Sunday: 9 a.m. to 7 p.m.</p>
+                    <p className="font-medium">Holidays: 9 a.m. to 7 p.m.</p>
                   </div>
                   <p className="w-9/12">Holidays include New Year's Day, Martin Luther King Jr. Day, Memorial Day, Fourth of July, Labor Day, Thanksgiving and Christmas Day.</p>
              </div>
@@ -142,11 +142,11 @@ const urgentCare = () => {
                 Why Should You Take Your Child to a Pediatric Urgent Care
                 Center?
               </h3>
-              <ul className="list-disc max-w-[36.1875rem] mt-5 ml-8">
-                <li>Urgent care is ideal for non-life-threatening injuries or illnesses, such as minor cuts, sprains, or common colds.</li>
-                <li>Wait times are decreased by urgent care clinics' convenient walk-in services and longer hours.</li>
-                <li>Accessible for non-emergency situations that require prompt attention but do not pose an immediate threat to life.</li>
-                <li>If you have less serious health concerns, urgent care visits can be a more cost-effective option than emergency hospital appointments.</li>
+              <ul className="list-disc max-w-[36.1875rem] mt-5 ml-8 ">
+                <li className="mt-1">Urgent care is ideal for non-life-threatening injuries or illnesses, such as minor cuts, sprains, or common colds.</li>
+                <li className="mt-1">Wait times are decreased by urgent care clinics' convenient walk-in services and longer hours.</li>
+                <li className="mt-1">Accessible for non-emergency situations that require prompt attention but do not pose an immediate threat to life.</li>
+                <li className="mt-1">If you have less serious health concerns, urgent care visits can be a more cost-effective option than emergency hospital appointments.</li>
               </ul>
             </div>
             <div className="">
