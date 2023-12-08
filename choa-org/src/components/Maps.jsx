@@ -80,7 +80,7 @@ const Map = () => {
               switch (service) {
                 case "Urgent Care Center":
                   markerIcon =
-                    "http://maps.google.com/mapfiles/ms/icons/hospitals.png";
+                    "http://maps.google.com/mapfiles/ms/icons/purple.png";
                   break;
                 case "Emergency Department":
                   markerIcon =
@@ -88,7 +88,7 @@ const Map = () => {
                   break;
                 default:
                   markerIcon =
-                    "http://maps.google.com/mapfiles/ms/icons/blue.png"; // Default blue icon
+                    "http://maps.google.com/mapfiles/ms/icons/green.png"; // Default blue icon
                   break;
               }
 

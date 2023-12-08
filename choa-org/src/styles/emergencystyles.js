@@ -85,12 +85,13 @@ padding: 170px 275px 0 0;
 @media(max-width: 1000px){
     padding: 0px 0px 0px 0px;
     
-}
-`
+}`
+
 export const HeaderLinks = styled.h2`
 display: flex;
 flex-direction: row;
 `
+
 
 export const MoreButton = styled.button`
 display: inline-flex;
@@ -121,6 +122,7 @@ gap:5px;
 `
 
 
+
 export const SvgWrapper2 = styled(SvgWrapper)`
 border-style: none
 `
@@ -138,4 +140,5 @@ gap: 10px;
 `
 
 export const TreatDropDown = styled(SeeMoreTxt)`
+
 `

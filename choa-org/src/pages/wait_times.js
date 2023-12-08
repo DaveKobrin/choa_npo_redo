@@ -70,8 +70,6 @@ const WaitTimes = () => {
             const distance = distances.find(d => d.locationName === location.name)?.distance;
             return(
                 <>
-                    <h1>{location.name}</h1>
-                    <h1>{distance} miles away</h1>
                     <AllWaitCard location={location} key={idx} />
                 </>
             )   
@@ -107,8 +105,6 @@ const WaitTimes = () => {
             const distance = distances.find(d => d.locationName === location.name)?.distance;
             return(
                 <>
-                    <h1>{location.name}</h1>
-                    <h1>{distance} miles away</h1>
                     <AllWaitCard location={location} key={idx} />
                 </>
             )   

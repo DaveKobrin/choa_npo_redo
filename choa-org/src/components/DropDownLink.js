@@ -1,25 +1,32 @@
 
 import {  NavItem,  Menu, } from '@/styles/navStyles';
 import Link from 'next/link';
-import {calendar, location, findDoc, portal} from '/src/data/icons.js';
+// import {calendar, location, findDoc, portal} from '/src/data/icons.js';
 import Image from 'next/image'
 
-export default function DropDownLink({menuOpen, setMenuOpen, title}) {
+export default function DropDownLink({menuOpen, setMenuOpen, title, main}) {
 
-
+  const closeMenu = () => {
+    // Close the menu by setting menuOpen state to false
+    setMenuOpen(false);
+  };
   
-  const  main = [
-      {icon:calendar,title:'Request an appointment',href:'#'},
-      {icon:location,title:'Find a location',href:'#'},
-      {icon:findDoc,title:'Find a doctor',href:'#'},
-      {icon:portal,title:'Patient portal',href:'#'},
-    ]
-  const mainlinkList = main.map((link) => {
+  // const  main = [
+  //     {icon:calendar,title:'Request an appointment',href:'#'},
+  //     {icon:location,title:'Find a location',href:'#'},
+  //     {icon:findDoc,title:'Find a doctor',href:'#'},
+  //     {icon:portal,title:'Patient portal',href:'#'},
+  //   ]
+  const mainlinkList = main.map((link,index) => {
     return (
-      <table key={link.title} className='m-3'>
+      <table key={index} className='m-3'>
         <tr >
           <td className='w-9'>{link.icon}</td>
-          <td className='pl-4 pb-2 pt-2'>{link.title}</td>
+          <td className='pl-4 pb-2 pt-2'>
+            <Link  href={link.href} onClick={closeMenu}>
+              <span className='text-black'>{link.title}</span>
+            </Link>
+          </td>
         </tr>
       </table>
     )
@@ -32,10 +39,11 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
         {title:'Conditions & Treatments',href:'#'},
         {title:'Programs',href:'#'},
       ]
-  const sub1 = linkssub1.map((link) => {
+  const sub1 = linkssub1.map((link,index) => {
     return (
-      <div key={link.title} className='flex-col'>
-        <Link className='text-xs' href={link.href}>
+
+      <div key={index}  className='flex-col'>
+        <Link className='text-xs' href={link.href} onClick={closeMenu}>
           <span className='text-black'>{link.title}</span>
         </Link>
     </div>
@@ -43,15 +51,15 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
   })
   const titlesub2 = 'Visit Types'
   const  linkssub2= [
-        {title:'Emergency',href:'#'},
-        {title:'Urgent Care',href:'#'},
-        {title:'Primary Care',href:'#'},
+        {title:'Emergency',href:'/emergencycare'},
+        {title:'Urgent Care',href:'/urgentcare'},
+        {title:'Primary Care',href:'/primarycare'},
         {title:'Telemed',href:'/telemed'},
       ]
-  const sub2 = linkssub2.map((link) => {
+  const sub2 = linkssub2.map((link,index) => {
     return (
-      <div key={link.title} className='flex-col'>
-      <Link className='text-xs' href={link.href}>
+      <div key={index}  className='flex-col'>
+      <Link className='text-xs' href={link.href} onClick={closeMenu}>
         <span className='text-black'>{link.title}</span>
       </Link>
     </div>
@@ -67,10 +75,10 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
         {title:'Volunteering & Fundraising',href:'#'},
       ]
 
-  const sub3 = linkssub3.map((link) => {
+  const sub3 = linkssub3.map((link,index) => {
     return (
-      <div key={link.title} className='flex-col'>
-        <Link className='text-xs' href={link.href}>
+      <div key={index}  className='flex-col'>
+        <Link className='text-xs' href={link.href} onClick={closeMenu}>
           <span className='text-black'>{link.title}</span>
         </Link>
       </div>
