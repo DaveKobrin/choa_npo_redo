@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav, SearchBox, SearchInput, SearchIcon } from '@/styles/navStyles';
 import Link from 'next/link';
 import DropDownLink from './DropDownLink';
+import {calendar, location, findDoc, portal, nurse, medic, sick, hosp, cases} from '/src/data/icons.js';
 
 
 const NavBar = () => {
@@ -10,6 +11,22 @@ const NavBar = () => {
   const [menu1Open, setMenu1Open] = React.useState(false);
   const [menu2Open, setMenu2Open] = React.useState(false);
   const [menu3Open, setMenu3Open] = React.useState(false);
+
+  const  main1 = [
+    {icon:calendar,title:'Request an appointment',href:'#'},
+    {icon:location,title:'Find a location',href:'#'},
+    {icon:findDoc,title:'Find a doctor',href:'#'},
+    {icon:portal,title:'Patient portal',href:'#'},
+  ]
+  const  main2 = [
+    {icon:hosp,title:'About CHOA',href:'#'},
+    {icon:cases,title:'Research & Trials ',href:'#'},
+  ]
+  const  main3 = [
+    {icon:nurse,title:'Nursing Resources',href:'#'},
+    {icon:medic,title:'Physician Resources',href:'#'},
+    {icon:sick,title:'Refer a patient',href:'#'},
+  ]
 
   
 
@@ -37,9 +54,9 @@ const NavBar = () => {
         }
       </MobileNavToggle>
       <DesktopNav>
-        <DropDownLink menuOpen={menu1Open} setMenuOpen={setMenu1Open} title={'PATIENTS & FAMILIES'} />
-        <DropDownLink menuOpen={menu2Open} setMenuOpen={setMenu2Open} title={'RESOURCES'}  />
-        <DropDownLink menuOpen={menu3Open} setMenuOpen={setMenu3Open} title={'HEALTHCARE PROFESSIONALS'} />
+        <DropDownLink menuOpen={menu1Open} setMenuOpen={setMenu1Open} title={'PATIENTS & FAMILIES'} main={main1} />
+        <DropDownLink menuOpen={menu2Open} setMenuOpen={setMenu2Open} title={'RESOURCES'} main={main2}  />
+        <DropDownLink menuOpen={menu3Open} setMenuOpen={setMenu3Open} title={'HEALTHCARE PROFESSIONALS'} main={main3} />
         
         <NavItem>
           <SearchBox>

@@ -4,33 +4,25 @@ import { conditionSeverity } from "../data/conditionSeverity";
 import Button from "@/components/Button";
 import { LocationWaitCard } from "@/components/locationWaitCard";
 import { locationAndWaitTimes } from "@/data/locationAndWaitTimes";
+import { Hero } from "@/components/hero";
 
 const urgentCare = () => {
   return (
     <>
       <div className="max-w-screen min-h-screen">
         {/* Hero section */}
-        <div className="relative w-screen">
-          <img
-            className="w-full h-[54vh] object-cover"
-            src="/urgent_care_hero_image.png"
-            alt="smiling child"
-          />
-          {/* Text overlay */}
-          <div className="max-w-[700px] absolute top-[150px] left-[20px] transform translate-x-16 -translate-y-14 p-14 bg-white rounded bg-opacity-90">
-            <h2 className="text-[#285844] text-[3.5rem]">Urgent Care</h2>
-            <ParagText>
-              Our pediatric Urgent Care Centers are staffed seven days a week
-              with doctors and nurses who are specially trained to treat
-              non-life-threatening illnesses in children and teens.
-            </ParagText>
-          </div>
-        </div>
+        <Hero img="/urgent_care_hero_image.png"
+          alt="smiling child"
+          head="Urgent Care"
+          text="Our pediatric Urgent Care Centers are staffed seven days a week
+          with doctors and nurses who are specially trained to treat
+          non-life-threatening illnesses in children and teens." />
+
         <h5 className="p-5 flex tracking-widest"><span className="text-[#00A94F] ">Home</span> <img className="h-[12px] self-center mx-2" src="/Vector_babyarrow.png"/> Urgent Care</h5>
 
         {/* -- Wait Times Section -- */}
         <div className="flex flex-col w-full justify-center items-center mt-32 mb-5 ">
-          <div className="max-w-[1600px] flex flex-row flex-wrap justify-center">
+          <div className="max-w-[1500px] flex flex-row flex-wrap justify-center">
             {locationAndWaitTimes
               .filter((location) => {
                 return location.facilityType === "Urgent Care Center";
@@ -109,8 +101,9 @@ const urgentCare = () => {
             </div>
           </div>
 
-
-          <div className="flex justify-around w-full flex-row mt-5 mx-20 pr-32 mb-20">
+          {/* --- Bottom Section --- */}
+          <div className="max-w-[1000px] mx-10">
+          <div className="flex justify-between w-full flex-row mt-5 mx-20 pr-20 mb-20">
             {/* Urgent Care Hours */}
              <div className="w-5/12 self-start">
                   <h4 className="text-[1.5rem]">Urgent Care Hours</h4>
@@ -135,7 +128,7 @@ const urgentCare = () => {
             
           </div>
           {/* Why Section */}
-          <div className="flex flex-row w-full justify-center items-center mx-28">
+          <div className="flex flex-row w-full justify-center items-center mx-20">
             {/* Text */}
             <div className="max-w-[45rem] mt-5 mx-7">
               <h3 className="text-black text-[1.625rem] leading-8">
@@ -152,6 +145,7 @@ const urgentCare = () => {
             <div className="">
               <img className="" src="doctor_and_child.png" alt="" />
             </div>
+          </div>
           </div>
         </div>
       </div>

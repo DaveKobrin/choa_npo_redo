@@ -6,6 +6,7 @@ import { PageColors } from "@/styles/globalstyles";
 
 
 // img - backgroud for hero section
+// alt - image alt label
 // head - headding for info card
 // text - text for info card
 // buText - the text on the button if present
@@ -13,7 +14,7 @@ import { PageColors } from "@/styles/globalstyles";
 
 
 export const Hero = (props) => {
-    const { img, head, text, buText, target } = props;
+    const { img, alt, head, text, buText, target } = props;
 
     const targ = target || "#";
 
@@ -25,7 +26,7 @@ export const Hero = (props) => {
     return (
         <>
             <HeroContainer>
-                <Image src={img} layout="fill" objectFit="cover"/>
+                <Image src={img} alt={alt || ""} layout="fill" objectFit="cover"/>
                 <HeroBox>
                     <HeroHead>{head}</HeroHead>
                     <HeroText>{text}</HeroText>
