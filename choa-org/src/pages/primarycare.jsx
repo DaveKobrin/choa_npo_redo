@@ -35,7 +35,7 @@ const primaryCare = () => {
           </div>
         </div>
         <Link href="/"> 
-          <h2 className="p-5">Home - Primary Care</h2>
+          <h5 className="p-5 flex tracking-widest"><span className="text-[#00A94F] ">Home</span> <img className="h-[12px] self-center mx-2" src="/Vector_babyarrow.png"/> Primary Care</h5>
        </Link>
 
 

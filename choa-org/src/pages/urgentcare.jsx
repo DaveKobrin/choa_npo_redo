@@ -26,7 +26,7 @@ const urgentCare = () => {
             </ParagText>
           </div>
         </div>
-        <h5 className="p-5 flex"><span className="text-[#00A94F] ">Home</span> <img className="h-[12px] self-center mx-2" src="/Vector_babyarrow.png"/> Urgent Care</h5>
+        <h5 className="p-5 flex tracking-widest"><span className="text-[#00A94F] ">Home</span> <img className="h-[12px] self-center mx-2" src="/Vector_babyarrow.png"/> Urgent Care</h5>
 
         {/* -- Wait Times Section -- */}
         <div className="flex flex-col w-full justify-center items-center mt-32 mb-5 ">
