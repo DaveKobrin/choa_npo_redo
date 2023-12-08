@@ -41,83 +41,83 @@ const WaitTimes = () => {
     const handleClick = () => {
         console.log("click click")
     }
-    const renderWaitCards1 = () => {
-        const distances = GetDistance(); 
+    // const renderWaitCards1 = () => {
+    //     const distances = GetDistance(); 
     
-        return locationAndWaitTimes
-          .filter((location) => location.facilityType === "Emergency Department")
-          .sort((a, b) => {
-            console.log("a, b: ", JSON.stringify(a) + ", " + JSON.stringify(b))
-            if (sortBy1 === 'Distance') {
+    //     return locationAndWaitTimes
+    //       .filter((location) => location.facilityType === "Emergency Department")
+    //       .sort((a, b) => {
+    //         console.log("a, b: ", JSON.stringify(a) + ", " + JSON.stringify(b))
+    //         if (sortBy1 === 'Distance') {
 
-             const distanceAObject = distances.find(d => d.locationName === a.name);
-            const distanceBObject = distances.find(d => d.locationName === b.name);
+    //          const distanceAObject = distances.find(d => d.locationName === a.name);
+    //         const distanceBObject = distances.find(d => d.locationName === b.name);
 
-            const distanceA = distanceAObject ? distanceAObject.distance : null;
-            const distanceB = distanceBObject ? distanceBObject.distance : null;
-              console.log("distance A: " + JSON.stringify(distanceA))
-              console.log("distance B: " + JSON.stringify(distanceB))
+    //         const distanceA = distanceAObject ? distanceAObject.distance : null;
+    //         const distanceB = distanceBObject ? distanceBObject.distance : null;
+    //           console.log("distance A: " + JSON.stringify(distanceA))
+    //           console.log("distance B: " + JSON.stringify(distanceB))
     
-              // Compare distances
-              return distanceA - distanceB;
-            } else if (sortBy1 === 'WaitTimes') {
-              return a.waitTime - b.waitTime;
-            } else {
-              return 0;
-            }
-          })
-          .map((location, idx) => {
-            const distance = distances.find(d => d.locationName === location.name)?.distance;
-            return(
-                <>
-                    <h1>{location.name}</h1>
-                    <h1>{distance} miles away</h1>
-                    <WaitCard location={location} key={idx} />
-                </>
-            )   
-    });
-      };
+    //           // Compare distances
+    //           return distanceA - distanceB;
+    //         } else if (sortBy1 === 'WaitTimes') {
+    //           return a.waitTime - b.waitTime;
+    //         } else {
+    //           return 0;
+    //         }
+    //       })
+    //       .map((location, idx) => {
+    //         const distance = distances.find(d => d.locationName === location.name)?.distance;
+    //         return(
+    //             <>
+    //                 <h1>{location.name}</h1>
+    //                 <h1>{distance} miles away</h1>
+    //                 <WaitCard location={location} key={idx} />
+    //             </>
+    //         )   
+    // });
+    //   };
 
-      const renderWaitCards2 = () => {
-        const distances = GetDistance(); 
+    //   const renderWaitCards2 = () => {
+    //     const distances = GetDistance(); 
     
-        return locationAndWaitTimes
-          .filter((location) => location.facilityType === "Urgent Care Center")
-          .sort((a, b) => {
-            console.log("a, b: ", JSON.stringify(a) + ", " + JSON.stringify(b))
-            if (sortBy2 === 'Distance') {
+    //     return locationAndWaitTimes
+    //       .filter((location) => location.facilityType === "Urgent Care Center")
+    //       .sort((a, b) => {
+    //         console.log("a, b: ", JSON.stringify(a) + ", " + JSON.stringify(b))
+    //         if (sortBy2 === 'Distance') {
 
-             const distanceAObject = distances.find(d => d.locationName === a.name);
-            const distanceBObject = distances.find(d => d.locationName === b.name);
+    //          const distanceAObject = distances.find(d => d.locationName === a.name);
+    //         const distanceBObject = distances.find(d => d.locationName === b.name);
 
-            const distanceA = distanceAObject ? distanceAObject.distance : null;
-            const distanceB = distanceBObject ? distanceBObject.distance : null;
-              console.log("distance A: " + JSON.stringify(distanceA))
-              console.log("distance B: " + JSON.stringify(distanceB))
+    //         const distanceA = distanceAObject ? distanceAObject.distance : null;
+    //         const distanceB = distanceBObject ? distanceBObject.distance : null;
+    //           console.log("distance A: " + JSON.stringify(distanceA))
+    //           console.log("distance B: " + JSON.stringify(distanceB))
     
-              // Compare distances
-              return distanceA - distanceB;
-            } else if (sortBy2 === 'WaitTimes') {
-              return a.waitTime - b.waitTime;
-            } else {
-              return 0;
-            }
-          })
-          .map((location, idx) => {
-            const distance = distances.find(d => d.locationName === location.name)?.distance;
-            return(
-                <>
-                    <h1>{location.name}</h1>
-                    <h1>{distance} miles away</h1>
-                    <WaitCard location={location} key={idx} />
-                </>
-            )   
-    });
-      };
+    //           // Compare distances
+    //           return distanceA - distanceB;
+    //         } else if (sortBy2 === 'WaitTimes') {
+    //           return a.waitTime - b.waitTime;
+    //         } else {
+    //           return 0;
+    //         }
+    //       })
+    //       .map((location, idx) => {
+    //         const distance = distances.find(d => d.locationName === location.name)?.distance;
+    //         return(
+    //             <>
+    //                 <h1>{location.name}</h1>
+    //                 <h1>{distance} miles away</h1>
+    //                 <WaitCard location={location} key={idx} />
+    //             </>
+    //         )   
+    // });
+    //   };
     
-      const waitCards1 = renderWaitCards1();
+    //   const waitCards1 = renderWaitCards1();
 
-      const waitCards2 = renderWaitCards2();
+    //   const waitCards2 = renderWaitCards2();
 
     return (
         <>
@@ -152,7 +152,7 @@ const WaitTimes = () => {
                             </div>
                         {/* Emergency Department Wait Times Section */}
                             <div className="border border-black w-[70vw] overflow-y-scroll h-[264px]">
-                                {waitCards1}
+                                {/* {waitCards1} */}
                             </div>
                         </div>
                         {/* Urgent Care Wait Times Section */}
@@ -166,7 +166,7 @@ const WaitTimes = () => {
                                 </select>
                             </div>
                             <div className="border border-black w-[70vw] overflow-y-scroll h-[264px]">
-                                {waitCards2}
+                                {/* {waitCards2} */}
                             </div>
                         </div>
                     </div>
