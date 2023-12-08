@@ -36,7 +36,7 @@ const urgentCare = () => {
                 return location.facilityType === "Urgent Care Center";
               })
               .map((location, index) => (
-                <div className="flex w-[42rem] m-4">
+                <div key={index} className="flex w-[42rem] m-4">
                   <LocationWaitCard location={location} />
                 </div>
               ))}
@@ -71,7 +71,7 @@ const urgentCare = () => {
               </thead>
               <tbody>
                 {conditionSeverity.map((condition, index) => (
-                  <tr>
+                  <tr key={`${condition.condition}_${index}`}>
                     <td className="w-8/12 py-1 px-2 border-[#B3ADAD] border">
                       {condition.condition}
                     </td>
@@ -120,16 +120,16 @@ const urgentCare = () => {
                     <p className="font-medium">Saturday and Sunday: 9 a.m. to 7 p.m.</p>
                     <p className="font-medium">Holidays: 9 a.m. to 7 p.m.</p>
                   </div>
-                  <p className="w-9/12">Holidays include New Year's Day, Martin Luther King Jr. Day, Memorial Day, Fourth of July, Labor Day, Thanksgiving and Christmas Day.</p>
+                  <p className="w-9/12">Holidays include New Year&apos;s Day, Martin Luther King Jr. Day, Memorial Day, Fourth of July, Labor Day, Thanksgiving and Christmas Day.</p>
              </div>
              {/* Holiday Hours Locations */}
             <div className="self-start">
                   <h4 className="text-[1.5rem] ">Holiday Hours Offered at:</h4>
-                  <p className="mt-3">Children’s at Chamblee-Brookhaven</p>
-                  <p>Children’s at Forsyth</p>
-                  <p>Children’s at Hudson Bridge</p>
-                  <p>Children’s at Satellite Boulevard</p>
-                  <p>Children’s at Town Center</p>
+                  <p className="mt-3">Children&apos;s at Chamblee-Brookhaven</p>
+                  <p>Children&apos;s at Forsyth</p>
+                  <p>Children&apos;s at Hudson Bridge</p>
+                  <p>Children&apos;s at Satellite Boulevard</p>
+                  <p>Children&apos;s at Town Center</p>
                   <p className="mt-3">Hours may be affected by unanticipated circumstances. </p>
             </div>
             
@@ -144,7 +144,7 @@ const urgentCare = () => {
               </h3>
               <ul className="list-disc max-w-[36.1875rem] mt-5 ml-8 ">
                 <li className="mt-1">Urgent care is ideal for non-life-threatening injuries or illnesses, such as minor cuts, sprains, or common colds.</li>
-                <li className="mt-1">Wait times are decreased by urgent care clinics' convenient walk-in services and longer hours.</li>
+                <li className="mt-1">Wait times are decreased by urgent care clinics&apos; convenient walk-in services and longer hours.</li>
                 <li className="mt-1">Accessible for non-emergency situations that require prompt attention but do not pose an immediate threat to life.</li>
                 <li className="mt-1">If you have less serious health concerns, urgent care visits can be a more cost-effective option than emergency hospital appointments.</li>
               </ul>

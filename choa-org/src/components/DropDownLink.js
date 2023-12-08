@@ -19,7 +19,7 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
     ]
   const mainlinkList = main.map((link) => {
     return (
-      <table className='m-3'>
+      <table key={link.title} className='m-3'>
         <tr >
           <td className='w-9'>{link.icon}</td>
           <td className='pl-4 pb-2 pt-2'>
@@ -41,6 +41,7 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
       ]
   const sub1 = linkssub1.map((link) => {
     return (
+
       <div  className='flex-col'>
         <Link className='text-xs' href={link.href} onClick={closeMenu}>
           <span className='text-black'>{link.title}</span>
