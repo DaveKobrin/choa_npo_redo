@@ -1,22 +1,22 @@
 
 import {  NavItem,  Menu, } from '@/styles/navStyles';
 import Link from 'next/link';
-import {calendar, location, findDoc, portal} from '/src/data/icons.js';
+// import {calendar, location, findDoc, portal} from '/src/data/icons.js';
 import Image from 'next/image'
 
-export default function DropDownLink({menuOpen, setMenuOpen, title}) {
+export default function DropDownLink({menuOpen, setMenuOpen, title, main}) {
 
   const closeMenu = () => {
     // Close the menu by setting menuOpen state to false
     setMenuOpen(false);
   };
   
-  const  main = [
-      {icon:calendar,title:'Request an appointment',href:'#'},
-      {icon:location,title:'Find a location',href:'#'},
-      {icon:findDoc,title:'Find a doctor',href:'#'},
-      {icon:portal,title:'Patient portal',href:'#'},
-    ]
+  // const  main = [
+  //     {icon:calendar,title:'Request an appointment',href:'#'},
+  //     {icon:location,title:'Find a location',href:'#'},
+  //     {icon:findDoc,title:'Find a doctor',href:'#'},
+  //     {icon:portal,title:'Patient portal',href:'#'},
+  //   ]
   const mainlinkList = main.map((link,index) => {
     return (
       <table key={index} className='m-3'>
@@ -51,7 +51,7 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
   })
   const titlesub2 = 'Visit Types'
   const  linkssub2= [
-        {title:'Emergency',href:'#'},
+        {title:'Emergency',href:'/emergencycare'},
         {title:'Urgent Care',href:'/urgentcare'},
         {title:'Primary Care',href:'/primarycare'},
         {title:'Telemed',href:'/telemed'},

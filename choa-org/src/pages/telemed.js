@@ -14,7 +14,7 @@ export default function Telemed() {
         <>
             <Hero img={heroImg} head="Telemedicine" text={heroText} />
             
-            <div className="flex align-top m-2 ">
+            <div className="flex align-top m-5 ">
                 <p className="text-green-600 tracking-widest">Home</p>
                 <div className="w-0 h-0 mt-1.5 mr-2 ml-2
                     border-t-[6px] border-t-transparent
