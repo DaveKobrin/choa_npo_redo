@@ -163,7 +163,7 @@ const NavBar = () => {
       </MobileNavToggle>
       <DesktopNav>
         <MainLink 
-          pos={10}
+          pos={"right-10"}
           title='PATIENTS & FAMILIES'
           menuOpen = {menu1Open}
           setMenuOpen = {setMenu1Open}
@@ -171,7 +171,7 @@ const NavBar = () => {
           setMenu3Open = {setMenu3Open}
         />
         <MainLink 
-          pos={3}
+          pos={"right-3"}
           title='RESOURCES'
           menuOpen = {menu2Open}
           setMenuOpen = {setMenu2Open}
@@ -179,7 +179,7 @@ const NavBar = () => {
           setMenu3Open = {setMenu3Open}
         />
         <MainLink 
-          pos={20}
+          pos={"right-20"}
           title='HEALTHCARE PROFESSIONALS'
           menuOpen = {menu3Open}
           setMenuOpen = {setMenu3Open}

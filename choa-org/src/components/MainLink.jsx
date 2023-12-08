@@ -28,7 +28,7 @@ export default function MainLink({ pos,title, menuOpen, setMenuOpen, setMenu2Ope
               }
               {
                 menuOpen ? 
-                <div className={`w-0 h-0 top-5 right-${pos} absolute
+                <div className={`w-0 h-0 top-5 ${pos} absolute
                     border-l-[50px] border-l-transparent
                     border-b-[75px] border-b-white
                     border-r-[50px] border-r-transparent `}>
