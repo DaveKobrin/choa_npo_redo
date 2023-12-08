@@ -78,5 +78,109 @@ export const conditionSeverity = [
     {
         condition: "Fainting",
         facility: "Urgent Care"
-    }
+    },
+    {
+        condition: "Fever (child is older than 2 months)",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Fever (child is younger than 2 months)",
+        facility: "Emergency Department"
+    },
+    {
+        condition: "Flu",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Head inury (no loss of consciousness)",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Head injury (loss of consciousness)",
+        facility: "Emergency Department"
+    },
+    {
+        condition: "Laryngitis",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Migraine",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Pink eye",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Pneumonia (no breathing problems)",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Pneumonia (trouble breathing)",
+        facility: "Emergency Department"
+    },
+    {
+        condition: "Poisoning",
+        facility: "Emergency Department"
+    },
+    {
+        condition: "Seizure",
+        facility: "Emergency Department"
+    },
+    {
+        condition: "Shock",
+        facility: "Emergency Department"
+    },
+    {
+        condition: "Sinus infection",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Sore throat",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Sprain",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Sting",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Stitches",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Stomachache",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Strain",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Swallowed object (no problems swallowing)",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Swallowed object (trouble swallowing)",
+        facility: "Emergency Department"
+    },
+    {
+        condition: "Swimmer’s ear",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Uncomfortable or Painful Rash",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Urinary tract infection",
+        facility: "Urgent Care"
+    },
+    {
+        condition: "Vomiting",
+        facility: "Urgent Care"
+    },
 ]
