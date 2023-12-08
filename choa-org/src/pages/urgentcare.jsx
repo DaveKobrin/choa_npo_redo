@@ -30,7 +30,7 @@ const urgentCare = () => {
 
         {/* -- Wait Times Section -- */}
         <div className="flex flex-col w-full justify-center items-center mt-32 mb-5 ">
-          <div className="max-w-[1600px] flex flex-row flex-wrap justify-center">
+          <div className="max-w-[1500px] flex flex-row flex-wrap justify-center">
             {locationAndWaitTimes
               .filter((location) => {
                 return location.facilityType === "Urgent Care Center";
