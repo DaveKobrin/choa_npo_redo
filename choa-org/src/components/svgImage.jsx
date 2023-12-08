@@ -23,7 +23,7 @@ export const SvgImg = ({iconName}) => {
                 </svg>
             }
             {iconName == "medPlus" &&
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 14 14" fill="none">
                     <g clip-path="url(#clip0_181_3193)">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0329 11.9065H2.20506V2.07652H12.035L12.0329 11.9065ZM2.20506 0.672241C1.4306 0.672241 0.800781 1.30276 0.800781 2.07652V2.77866V11.2044V11.9065C0.800781 12.681 1.4306 13.3108 2.20506 13.3108H12.035C12.8095 13.3108 13.4393 12.681 13.4393 11.9065V2.07652C13.4393 1.30276 12.8095 0.672241 12.035 0.672241H2.20506Z" fill="#0081C6"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M5.7158 10.5022H8.52436V8.39582H10.6308V5.58726H8.52436V3.48083H5.7158V5.58726H3.60938V8.39582H5.7158V10.5022Z" fill="#0081C6"/>
