@@ -24,7 +24,7 @@ export default function Home() {
         <HeroContent>
           <h2 className="mb-5 text-#285844 text-4xl">Nothing Matters More Than Kids</h2>
           <p className="text-#5A5A5A">Every day we provide nationally-ranked 
-          pediatric care to Georgia’s kids and teens,
+          pediatric care to Georgia's kids and teens,
           so they can get back to just being kids.</p>
         </HeroContent>
          <MiddleDiv>

@@ -16,7 +16,7 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
     ]
   const mainlinkList = main.map((link) => {
     return (
-      <table className='m-3'>
+      <table key={link.title} className='m-3'>
         <tr >
           <td className='w-9'>{link.icon}</td>
           <td className='pl-4 pb-2 pt-2'>{link.title}</td>
@@ -34,7 +34,7 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
       ]
   const sub1 = linkssub1.map((link) => {
     return (
-      <div  className='flex-col'>
+      <div key={link.title} className='flex-col'>
         <Link className='text-xs' href={link.href}>
           <span className='text-black'>{link.title}</span>
         </Link>
@@ -50,7 +50,7 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
       ]
   const sub2 = linkssub2.map((link) => {
     return (
-      <div  className='flex-col'>
+      <div key={link.title} className='flex-col'>
       <Link className='text-xs' href={link.href}>
         <span className='text-black'>{link.title}</span>
       </Link>
@@ -69,7 +69,7 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
 
   const sub3 = linkssub3.map((link) => {
     return (
-      <div  className='flex-col'>
+      <div key={link.title} className='flex-col'>
         <Link className='text-xs' href={link.href}>
           <span className='text-black'>{link.title}</span>
         </Link>

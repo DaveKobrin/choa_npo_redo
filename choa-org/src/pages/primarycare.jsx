@@ -60,7 +60,7 @@ const primaryCare = () => {
             <Heading3Title>Appointment Cancellations</Heading3Title>
             <div className="mt-10">
               <ParagText>
-                 Sign up for this online tool to help you access your child’s medical
+                 Sign up for this online tool to help you access your child's medical
                   records and securely communicate with your healthcare team.
               </ParagText>
             </div>
@@ -84,7 +84,7 @@ const primaryCare = () => {
                   <ParagList>Terri McFadden, MD</ParagList>
               </span>
               <ParagText>
-                Some physicians and affiliated healthcare professionals who perform services at Children’s Healthcare of
+                Some physicians and affiliated healthcare professionals who perform services at Children's Healthcare of
                 Atlanta are independent providers and not hospital employees.
               </ParagText>
               </div>
@@ -103,7 +103,7 @@ const primaryCare = () => {
                 What is my MYchart?
               </Heading3Title>
              
-                <p> Sign up for this online tool to help you access your child’s medical
+                <p> Sign up for this online tool to help you access your child's medical
                   records and securely communicate with your healthcare team.</p>
                 <div className="m-1">
                 <Button
