@@ -6,7 +6,10 @@ import Image from 'next/image'
 
 export default function DropDownLink({menuOpen, setMenuOpen, title}) {
 
-
+  const closeMenu = () => {
+    // Close the menu by setting menuOpen state to false
+    setMenuOpen(false);
+  };
   
   const  main = [
       {icon:calendar,title:'Request an appointment',href:'#'},
@@ -19,7 +22,11 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
       <table key={link.title} className='m-3'>
         <tr >
           <td className='w-9'>{link.icon}</td>
-          <td className='pl-4 pb-2 pt-2'>{link.title}</td>
+          <td className='pl-4 pb-2 pt-2'>
+            <Link  href={link.href} onClick={closeMenu}>
+              <span className='text-black'>{link.title}</span>
+            </Link>
+          </td>
         </tr>
       </table>
     )
@@ -34,8 +41,9 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
       ]
   const sub1 = linkssub1.map((link) => {
     return (
-      <div key={link.title} className='flex-col'>
-        <Link className='text-xs' href={link.href}>
+
+      <div  className='flex-col'>
+        <Link className='text-xs' href={link.href} onClick={closeMenu}>
           <span className='text-black'>{link.title}</span>
         </Link>
     </div>
@@ -44,14 +52,14 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
   const titlesub2 = 'Visit Types'
   const  linkssub2= [
         {title:'Emergency',href:'#'},
-        {title:'Urgent Care',href:'#'},
-        {title:'Primary Care',href:'#'},
+        {title:'Urgent Care',href:'/urgentcare'},
+        {title:'Primary Care',href:'/primarycare'},
         {title:'Telemed',href:'/telemed'},
       ]
   const sub2 = linkssub2.map((link) => {
     return (
-      <div key={link.title} className='flex-col'>
-      <Link className='text-xs' href={link.href}>
+      <div  className='flex-col'>
+      <Link className='text-xs' href={link.href} onClick={closeMenu}>
         <span className='text-black'>{link.title}</span>
       </Link>
     </div>
@@ -69,8 +77,8 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
 
   const sub3 = linkssub3.map((link) => {
     return (
-      <div key={link.title} className='flex-col'>
-        <Link className='text-xs' href={link.href}>
+      <div  className='flex-col'>
+        <Link className='text-xs' href={link.href} onClick={closeMenu}>
           <span className='text-black'>{link.title}</span>
         </Link>
       </div>

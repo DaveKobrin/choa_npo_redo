@@ -14,8 +14,6 @@ const NavBar = () => {
   
 
 
-
-
   return (
     <>
     
@@ -40,7 +38,7 @@ const NavBar = () => {
       </MobileNavToggle>
       <DesktopNav>
         <DropDownLink menuOpen={menu1Open} setMenuOpen={setMenu1Open} title={'PATIENTS & FAMILIES'} />
-        <DropDownLink menuOpen={menu2Open} setMenuOpen={setMenu2Open} title={'RESOURCES'} />
+        <DropDownLink menuOpen={menu2Open} setMenuOpen={setMenu2Open} title={'RESOURCES'}  />
         <DropDownLink menuOpen={menu3Open} setMenuOpen={setMenu3Open} title={'HEALTHCARE PROFESSIONALS'} />
         
         <NavItem>
