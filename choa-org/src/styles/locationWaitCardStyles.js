@@ -16,7 +16,6 @@ export const CardDiv = styled.div`
 
 export const LocSubDiv = styled.div`
     width: 48%;
-    border: 1px solid red;
 `;
 
 export const TimeSubDiv = styled.div`
@@ -25,12 +24,10 @@ export const TimeSubDiv = styled.div`
     flex-direction: column;
     /* margin: 0.5rem 0.15rem; */
     align-items: center;
-    border: 1px solid red;
 `;
 
 export const HoursSubDiv = styled.div`
     width: 32%;
-    border: 1px solid red;
 `;
 
 export const TimeP = styled.p`
