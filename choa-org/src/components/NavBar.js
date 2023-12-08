@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav, SearchBox, SearchInput, SearchIcon } from '@/styles/navStyles';
+import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav, SearchBox, SearchInput, SearchIcon, Menu } from '@/styles/navStyles';
 import Link from 'next/link';
-import DropDownLink from './DropDownLink';
 import {calendar, location, findDoc, portal, nurse, medic, sick, hosp, cases} from '/src/data/icons.js';
-
+import MainLink from './MainLink';
+import DDMenu from './DDMenu';
 
 const NavBar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState(false);
@@ -28,15 +28,123 @@ const NavBar = () => {
     {icon:sick,title:'Refer a patient',href:'#'},
   ]
 
+  const closeMenu = () => {
+    // Close the menu by setting menuOpen state to false
+    setMenu1Open(false);
+    setMenu2Open(false);
+    setMenu3Open(false);
+  };
+
+  
+
+  const main1linkList = main1.map((link,index) => {
+    return (
+      <table key={index} className='m-3'>
+        <tr >
+          <td className='w-9'>{link.icon}</td>
+          <td className='pl-4 pb-2 pt-2'>
+            <Link  href={link.href} onClick={closeMenu}>
+              <span className='text-black'>{link.title}</span>
+            </Link>
+          </td>
+        </tr>
+      </table>
+    )
+  })
+
+  const main2linkList = main2.map((link,index) => {
+    return (
+      <table key={index} className='m-3'>
+        <tr >
+          <td className='w-9'>{link.icon}</td>
+          <td className='pl-4 pb-2 pt-2'>
+            <Link  href={link.href} onClick={closeMenu}>
+              <span className='text-black'>{link.title}</span>
+            </Link>
+          </td>
+        </tr>
+      </table>
+    )
+  })
+
+  const main3linkList = main3.map((link,index) => {
+    return (
+      <table key={index} className='m-3'>
+        <tr >
+          <td className='w-9'>{link.icon}</td>
+          <td className='pl-4 pb-2 pt-2'>
+            <Link  href={link.href} onClick={closeMenu}>
+              <span className='text-black'>{link.title}</span>
+            </Link>
+          </td>
+        </tr>
+      </table>
+    )
+  })
+  
+  const titlesub1 = 'Services'
+  const  linkssub1=[
+        {title:'Medical Services',href:'#'},
+        {title:'Departments',href:'#'},
+        {title:'Conditions & Treatments',href:'#'},
+        {title:'Programs',href:'#'},
+      ]
+  const sub1 = linkssub1.map((link,index) => {
+    return (
+
+      <div key={index}  className='flex-col'>
+        <Link className='text-xs' href={link.href} onClick={closeMenu}>
+          <span className='text-black'>{link.title}</span>
+        </Link>
+    </div>
+    )
+  })
+  const titlesub2 = 'Visit Types'
+  const  linkssub2= [
+        {title:'Emergency',href:'/emergencycare'},
+        {title:'Urgent Care',href:'/urgentcare'},
+        {title:'Primary Care',href:'/primarycare'},
+        {title:'Telemed',href:'/telemed'},
+      ]
+  const sub2 = linkssub2.map((link,index) => {
+    return (
+      <div key={index}  className='flex-col'>
+      <Link className='text-xs' href={link.href} onClick={closeMenu}>
+        <span className='text-black'>{link.title}</span>
+      </Link>
+    </div>
+    )
+  }) 
+  const titlesub3 = 'Resources'
+  const linkssub3 = [
+        {title:'Health Education',href:'#'},
+        {title:'What to Expect',href:'#'},
+        {title:'Medical Records',href:'#'},
+        {title:'Finance & Billing',href:'#'},
+        {title:'Visitor info',href:'#'},
+        {title:'Volunteering & Fundraising',href:'#'},
+      ]
+
+  const sub3 = linkssub3.map((link,index) => {
+    return (
+      <div key={index}  className='flex-col'>
+        <Link className='text-xs' href={link.href} onClick={closeMenu}>
+          <span className='text-black'>{link.title}</span>
+        </Link>
+      </div>
+        
+    )
+  })
+
   
 
 
   return (
     <>
     
-    <SNav>
+    <SNav >
       <Logo>
-        <Link href="/">
+        <Link onClick={closeMenu} href="/">
           <Image src="/choa-logo-color-white.webp" alt="Logo" width={200} height={37} priority />
         </Link>
       </Logo>
@@ -54,9 +162,85 @@ const NavBar = () => {
         }
       </MobileNavToggle>
       <DesktopNav>
-        <DropDownLink menuOpen={menu1Open} setMenuOpen={setMenu1Open} title={'PATIENTS & FAMILIES'} main={main1} />
-        <DropDownLink menuOpen={menu2Open} setMenuOpen={setMenu2Open} title={'RESOURCES'} main={main2}  />
-        <DropDownLink menuOpen={menu3Open} setMenuOpen={setMenu3Open} title={'HEALTHCARE PROFESSIONALS'} main={main3} />
+        <MainLink 
+          pos={"right-10"}
+          title='PATIENTS & FAMILIES'
+          menuOpen = {menu1Open}
+          setMenuOpen = {setMenu1Open}
+          setMenu2Open = {setMenu2Open}
+          setMenu3Open = {setMenu3Open}
+        />
+        <MainLink 
+          pos={"right-3"}
+          title='RESOURCES'
+          menuOpen = {menu2Open}
+          setMenuOpen = {setMenu2Open}
+          setMenu2Open = {setMenu1Open}
+          setMenu3Open = {setMenu3Open}
+        />
+        <MainLink 
+          pos={"right-20"}
+          title='HEALTHCARE PROFESSIONALS'
+          menuOpen = {menu3Open}
+          setMenuOpen = {setMenu3Open}
+          setMenu2Open = {setMenu1Open}
+          setMenu3Open = {setMenu2Open}
+        />
+      
+        {menu1Open ? (
+              
+              <DDMenu 
+                title='PATIENTS & FAMILIES'
+                menuOpen = {menu1Open}
+                setMenuOpen = {setMenu1Open}
+                setMenu2Open = {setMenu2Open}
+                setMenu3Open = {setMenu3Open}
+                main1linkList={main1linkList}
+                titlesub1 = {titlesub1}
+                sub1 = {sub1}
+                titlesub2 = {titlesub2}
+                sub2 = {sub2}
+                titlesub3 = {titlesub3}
+                sub3 = {sub3}
+              />
+              
+            ) : null}
+        {menu2Open ? (
+              
+              <DDMenu 
+                title='RESOURCES'
+                menuOpen = {menu2Open}
+                setMenuOpen = {setMenu2Open}
+                setMenu2Open = {setMenu1Open}
+                setMenu3Open = {setMenu3Open}
+                main1linkList={main2linkList}
+                titlesub1 = {titlesub3}
+                sub1 = {sub3}
+                titlesub2 = {''}
+                sub2 = {[]}
+                titlesub3 = {''}
+                sub3 = {[]}
+              />
+              
+            ) : null}
+        {menu3Open ? (
+             
+              <DDMenu 
+                title='HEALTHCARE PROFESSIONALS'
+                menuOpen = {menu3Open}
+                setMenuOpen = {setMenu3Open}
+                setMenu2Open = {setMenu1Open}
+                setMenu3Open = {setMenu2Open}
+                main1linkList={main3linkList}
+                titlesub1 = {titlesub1}
+                sub1 = {sub1}
+                titlesub2 = {titlesub2}
+                sub2 = {sub2}
+                titlesub3 = {titlesub3}
+                sub3 = {sub3}
+              />
+              
+            ) : null}
         
         <NavItem>
           <SearchBox>
