@@ -160,7 +160,7 @@ const primaryCare = () => {
               
 
           {/* MYchart Section */}
-          <div className="flex flex-row w-full justify-center items-center">
+          <div className="flex flex-row w-full justify-center items-center m-10">
               {/* Image */}
             <div className="">
               <img className="" src="primary_care_patientwithteddybear.png" alt="" />
