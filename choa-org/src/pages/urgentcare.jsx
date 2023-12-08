@@ -4,28 +4,20 @@ import { conditionSeverity } from "../data/conditionSeverity";
 import Button from "@/components/Button";
 import { LocationWaitCard } from "@/components/locationWaitCard";
 import { locationAndWaitTimes } from "@/data/locationAndWaitTimes";
+import { Hero } from "@/components/hero";
 
 const urgentCare = () => {
   return (
     <>
       <div className="max-w-screen min-h-screen">
         {/* Hero section */}
-        <div className="relative w-screen">
-          <img
-            className="w-full h-[54vh] object-cover"
-            src="/urgent_care_hero_image.png"
-            alt="smiling child"
-          />
-          {/* Text overlay */}
-          <div className="max-w-[700px] absolute top-[150px] left-[20px] transform translate-x-16 -translate-y-14 p-14 bg-white rounded bg-opacity-90">
-            <h2 className="text-[#285844] text-[3.5rem]">Urgent Care</h2>
-            <ParagText>
-              Our pediatric Urgent Care Centers are staffed seven days a week
-              with doctors and nurses who are specially trained to treat
-              non-life-threatening illnesses in children and teens.
-            </ParagText>
-          </div>
-        </div>
+        <Hero img="/urgent_care_hero_image.png"
+          alt="smiling child"
+          head="Urgent Care"
+          text="Our pediatric Urgent Care Centers are staffed seven days a week
+          with doctors and nurses who are specially trained to treat
+          non-life-threatening illnesses in children and teens." />
+
         <h5 className="p-5 flex tracking-widest"><span className="text-[#00A94F] ">Home</span> <img className="h-[12px] self-center mx-2" src="/Vector_babyarrow.png"/> Urgent Care</h5>
 
         {/* -- Wait Times Section -- */}

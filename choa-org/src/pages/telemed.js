@@ -12,7 +12,7 @@ export default function Telemed() {
 
     return (
         <>
-            <Hero img={heroImg} head="Telemedicine" text={heroText} />
+            <Hero img={heroImg} head="Telemedicine" text={heroText} alt="Parent and child at home" />
             
             <div className="flex align-top m-2 ">
                 <p className="text-green-600 tracking-widest">Home</p>
