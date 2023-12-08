@@ -4,6 +4,9 @@ import { locationAndWaitTimes } from "@/data/locationAndWaitTimes";
 const Map = () => {
   const [googleMapsScriptUrl, setGoogleMapsScriptUrl] = useState("");
 
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+
   const geocodeAddresses = (locations) => {
     return Promise.all(
       locations.map((location) => {
@@ -106,8 +109,11 @@ const Map = () => {
         script.async = false;
         script.defer = true;
 
+        // script.onload = () => {
+        //   customWindow.initMap?.();
+        // };
         script.onload = () => {
-          customWindow.initMap?.();
+          setScriptLoaded(true);
         };
 
         document.head.appendChild(script);
@@ -120,6 +126,14 @@ const Map = () => {
         console.error("Error fetching Google Maps script URL:", error)
       );
   }, []);
+
+  useEffect(() => {
+    if (scriptLoaded) {
+      // Initialize the map only when the script is loaded
+      window.initMap?.();
+    }
+  }, [scriptLoaded]);
+
 
   return <div id="map" className="h-[350px] w-10/12 rounded"></div>;
 };
