@@ -214,12 +214,12 @@ const NavBar = () => {
                 setMenu2Open = {setMenu1Open}
                 setMenu3Open = {setMenu3Open}
                 main1linkList={main2linkList}
-                titlesub1 = {titlesub1}
-                sub1 = {sub1}
-                titlesub2 = {titlesub2}
-                sub2 = {sub2}
-                titlesub3 = {titlesub3}
-                sub3 = {sub3}
+                titlesub1 = {titlesub3}
+                sub1 = {sub3}
+                titlesub2 = {''}
+                sub2 = {[]}
+                titlesub3 = {''}
+                sub3 = {[]}
               />
               
             ) : null}
