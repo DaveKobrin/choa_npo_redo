@@ -4,11 +4,16 @@ import { DesktopNav, Logo, MobileNav, MobileNavToggle, NavItem, SNav, SearchBox,
 import Link from 'next/link';
 import DropDownLink from './DropDownLink';
 
+
 const NavBar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState(false);
   const [menu1Open, setMenu1Open] = React.useState(false);
   const [menu2Open, setMenu2Open] = React.useState(false);
   const [menu3Open, setMenu3Open] = React.useState(false);
+
+  
+
+
 
 
   return (
@@ -34,9 +39,10 @@ const NavBar = () => {
         }
       </MobileNavToggle>
       <DesktopNav>
-        <DropDownLink menuOpen={menu1Open} setMenuOpen={setMenu1Open} links={{title: 'PATIENTS & FAMILIES', sub: ['Menu 1', 'Menu 2', 'Menu 3']}} />
-        <DropDownLink menuOpen={menu2Open} setMenuOpen={setMenu2Open} links={{title: 'RESOURCES', sub: ['Menu 1', 'Menu 2', 'Menu 3']}} />
-        <DropDownLink menuOpen={menu3Open} setMenuOpen={setMenu3Open} links={{title: 'HEALTHCARE PROFESSIONALS', sub: ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4','Menu 5']}} />
+        <DropDownLink menuOpen={menu1Open} setMenuOpen={setMenu1Open} title={'PATIENTS & FAMILIES'} />
+        <DropDownLink menuOpen={menu2Open} setMenuOpen={setMenu2Open} title={'RESOURCES'} />
+        <DropDownLink menuOpen={menu3Open} setMenuOpen={setMenu3Open} title={'HEALTHCARE PROFESSIONALS'} />
+        
         <NavItem>
           <SearchBox>
             <SearchInput />
