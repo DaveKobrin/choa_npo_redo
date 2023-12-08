@@ -2,7 +2,7 @@ import { PageColors } from "@/styles/globalstyles";
 import { Heading3Title, ParagText, ParagList } from "@/styles/textStyles";
 import { conditionSeverity } from "../data/conditionSeverity";
 import Button from "@/components/Button";
-import { WaitCard } from "@/components/waitCard";
+import { LocationWaitCard } from "@/components/locationWaitCard";
 import { locationAndWaitTimes } from "@/data/locationAndWaitTimes";
 
 const urgentCare = () => {
@@ -29,14 +29,18 @@ const urgentCare = () => {
         </div>
 
         {/* -- Wait Times Section -- */}
-        <div className="flex flex-col justify-center mt-32 mb-20">
-          {locationAndWaitTimes
-            .filter((location) => {
-              return location.facilityType === "Urgent Care Center";
-            })
-            .map((location, index) => (
-              <WaitCard key={index} location={location} />
-            ))}
+        <div className="flex flex-col w-full justify-center items-center mt-32 mb-20 ">
+          <div className="max-w-[1800px] flex flex-row flex-wrap justify-center">
+            {locationAndWaitTimes
+              .filter((location) => {
+                return location.facilityType === "Urgent Care Center";
+              })
+              .map((location, index) => (
+                <div className="flex w-[43rem] m-4">
+                  <LocationWaitCard location={location} />
+                </div>
+              ))}
+            </div>
         </div>
 
         {/* Bottom Section / Explanation Section */}
