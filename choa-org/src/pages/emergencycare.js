@@ -1,12 +1,13 @@
 import { locationAndWaitTimes } from "@/data/locationAndWaitTimes";
-import { WaitCard } from "@/components/waitCard";
 import { Heading3Title, ParagText, ParagList } from "@/styles/textStyles";
-import { About, EverythingText, Treatment, Photowrap, MoreButton, BtnTxt } from "@/styles/emergencystyles";
+import { About, EverythingText, Treatment, Photowrap, MoreButton, BtnTxt, SvgWrapper } from "@/styles/emergencystyles";
 import { SvgImg } from "@/components/svgImage";
+
 
 import Patient from "../../public/patient.png"
 import Image from "next/image";
-import { SvgWrapper } from "@/styles/waitCardStyles";
+import { LocationWaitCard } from "@/components/locationWaitCard";
+
 
 export default  function EmergencyCare ()
 {
@@ -20,7 +21,7 @@ export default  function EmergencyCare ()
               return location.facilityType === "Emergency Department";
             })
             .map((location, index) => (
-              <WaitCard key={index} location={location} />
+              <LocationWaitCard key={index} location={location} />
             ))}
         </div>
         
@@ -46,7 +47,7 @@ export default  function EmergencyCare ()
         </ParagText>
         {/* drop down goes here VVV */}
         <SvgWrapper>
-        <span>What we treat <SvgImg iconName="downarrow"/></span>
+        <span>What we treat</span><SvgImg iconName="downarrow"/>
         </SvgWrapper>
         
         </Treatment>

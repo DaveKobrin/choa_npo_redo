@@ -64,7 +64,9 @@ font-weight: 500;
 line-height: normal;
 `
 
-const SvgWrapper = styled.div`
+export const SvgWrapper = styled.div`
 display: flex;
 flex-direction: row;
+padding: 1px;
+border: 1px solid black
 `
