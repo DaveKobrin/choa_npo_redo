@@ -47,57 +47,22 @@ const urgentCare = () => {
         <div className="flex flex-col items-center mb-32">
           {/* Urgent Care or Emergency Section */}
           <div className="w-[800px]">
-            <Heading3Title>
-              Should My Child Go to Urgent Care or the Emergency Department?
-            </Heading3Title>
-            <div className="mt-10">
-              <ParagText>
-                When injuries and illnesses happen, it’s important to know where
-                to take your child.
-              </ParagText>
-              <ParagText>
-                When your child has a minor injury or illness and your family’s
-                pediatrician is not available, our Urgent Care Centers are here
-                for you, especially on evenings, weekends and holidays.
-              </ParagText>
-              <ParagText>
-                Our Emergency Departments are open 24 hours a day, seven days a
-                week, when your child has a serious or life-threatening
-                condition.
-              </ParagText>
-              <ParagText>
-                In case of an urgent concern or emergency, call 911 or go to the
-                nearest emergency department right away.
-              </ParagText>
-              <ParagText>
-                To help you decide if your child needs urgent care or emergency
-                services, use the chart below.
-              </ParagText>
-            </div>
+            
           </div>
-          {/* Table Intro*/}
-          <div className="w-[800px] pl-9 mt-5">
-            <ParagList>
-              Find your child’s condition in the list on the right.
-            </ParagList>
-            <ParagList>
-              On the same line, find the ✘ in one of the columns to the right of
-              the condition. The ✘ will show you if you should take your child
-              to our Urgent Care Center or Emergency Department.
-            </ParagList>
-          </div>
+
           {/* Table */}
-          <div className="w-[850px] mt-5">
-            <table className="min-w-full bg-white">
+          <div className="max-w-[90vw] mt-5">
+          <h3 className="text-[#C4489F] text-[1.625rem] mb-10 font-semibold">Does your child require Urgent Care or the Emergency Department?</h3>
+            <table className="min-w-full bg-white border-2 border-black">
               <thead>
                 <tr className="text-left">
-                  <th className="py-1 px-4 border-[#B3ADAD] border-b">
+                  <th className="py-1 px-4 border-black border-2">
                     Conditions*
                   </th>
-                  <th className="py-1 px-4 border-[#B3ADAD] border-b">
+                  <th className="py-1 px-4 border-black border-2">
                     Urgent Care Center
                   </th>
-                  <th className="py-1 px-4 border-[#B3ADAD] border-b">
+                  <th className="py-1 px-4 border-black border-2">
                     Emergency Department
                   </th>
                 </tr>
