@@ -123,7 +123,7 @@ const WaitTimes = () => {
                     {/* Map Section */}
                     <div className="flex justify-center w-screen">
                         <Map/>
-                        <div className="absolute z-10 bg-white w-[150px] h-[100px] rounded right-28 top-80 border border-gray-400">
+                        <div className="absolute z-10 bg-white w-[150px] h-[100px] rounded right-36 top-80 border border-gray-400">
                             <div className="flex justify-center flex-col h-full">
                                 <div className="flex flex-row pl-5 items-end">
                                     <img className="h-6" src="http://maps.google.com/mapfiles/ms/icons/red.png" />    
