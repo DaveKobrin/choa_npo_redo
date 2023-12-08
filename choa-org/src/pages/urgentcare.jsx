@@ -8,17 +8,17 @@ import { locationAndWaitTimes } from "@/data/locationAndWaitTimes";
 const urgentCare = () => {
   return (
     <>
-      <div className="min-w-screen min-h-screen">
+      <div className="max-w-screen min-h-screen">
         <h2 className="p-5">Home - Urgent Care</h2>
         {/* Hero section */}
-        <div className="relative">
+        <div className="relative w-screen">
           <img
-            className="w-full"
+            className="w-full h-[54vh] object-cover"
             src="/urgent_care_hero_image.png"
             alt="smiling child"
           />
           {/* Text overlay */}
-          <div className="w-2/4 absolute top-1/2 right-1/2 transform translate-x-16 -translate-y-14 p-20 bg-white rounded bg-opacity-90">
+          <div className="w-5/12 absolute top-[200px] left-[40px] transform translate-x-16 -translate-y-14 p-20 bg-white rounded bg-opacity-90">
             <h2>Urgent Care</h2>
             <ParagText>
               Our pediatric Urgent Care Centers are staffed seven days a week
@@ -29,29 +29,31 @@ const urgentCare = () => {
         </div>
 
         {/* -- Wait Times Section -- */}
-        <div className="flex flex-col w-full justify-center items-center mt-32 mb-20 ">
-          <div className="max-w-[1800px] flex flex-row flex-wrap justify-center">
+        <div className="flex flex-col w-full justify-center items-center mt-32 mb-5 bg-green-500">
+          <div className="max-w-[1600px] flex flex-row flex-wrap justify-center">
             {locationAndWaitTimes
               .filter((location) => {
                 return location.facilityType === "Urgent Care Center";
               })
               .map((location, index) => (
-                <div className="flex w-[43rem] m-4">
+                <div className="flex w-[42rem] m-4">
                   <LocationWaitCard location={location} />
                 </div>
               ))}
             </div>
         </div>
-
-        {/* Bottom Section / Explanation Section */}
-        <div className="flex flex-col items-center mb-32">
-          {/* Urgent Care or Emergency Section */}
-          <div className="w-[800px]">
-            
+        <div className="w-[800px] mx-20 mb-20">
+              <p className="">Our <span className="text-[#00A94F] font-bold">Emergency Departments</span> are open 24 hours a day, seven days a week, when your child has a serious or life-threatening condition.</p>
+              <p className="">In case of an urgent concern or emergency, call 911 or go to the nearest emergency department right away.</p>
           </div>
 
+        {/* Bottom Section / Explanation Section */}
+        <div className="flex flex-col mb-32">
+          {/* Urgent Care or Emergency Section */}
+          
+
           {/* Table */}
-          <div className="max-w-[90vw] mt-5">
+          <div className="max-w-[65vw] mt-5 m-20">
           <h3 className="text-[#C4489F] text-[1.625rem] mb-10 font-semibold">Does your child require Urgent Care or the Emergency Department?</h3>
             <table className="min-w-full bg-white border-2 border-black">
               <thead>
@@ -83,7 +85,7 @@ const urgentCare = () => {
                 ))}
               </tbody>
             </table>
-            <div className="flex justify-center w-full my-10">
+            <div className="flex w-full my-10">
               <div className="m-1">
                 <Button
                   text={"DOWNLOAD CHART"}
@@ -107,91 +109,45 @@ const urgentCare = () => {
             </div>
           </div>
 
-          {/* Urgent Care Hours */}
-          <div className="w-[800px] mt-5">
-            <Heading3Title>When Is Children’s Urgent Care Open?</Heading3Title>
-            <div className="mt-10">
-              <ParagText>
-                At our pediatric Urgent Care Centers, no appointment is
-                necessary, and walk-ins are welcome. We’re open seven days a
-                week, including evenings and holidays.
-              </ParagText>
-              <div className="pl-9">
-                <ParagList>Monday-Friday: 11 a.m. to 9 p.m.</ParagList>
-                <ParagList>Saturday and Sunday: 9 a.m. to 7 p.m.</ParagList>
-                <ParagList>Holidays: 9 a.m. to 7 p.m.</ParagList>
-              </div>
-              <ParagText>
-                Holidays include New Year's Day, Martin Luther King Jr. Day,
-                Memorial Day, Fourth of July, Labor Day,Thanksgiving and
-                Christmas Day.
-              </ParagText>
-              <ParagText>
-                We offer holiday hours at the following Urgent Care Centers:
-              </ParagText>
-              <div className="pl-9">
-                <ParagList>Children’s at Chamblee-Brookhaven</ParagList>
-                <ParagList>Children’s at Forsyth</ParagList>
-                <ParagList>Children’s at Hudson Bridge</ParagList>
-                <ParagList>Children’s at Satellite Boulevard</ParagList>
-                <ParagList>Children’s at Town Center</ParagList>
-              </div>
-              <ParagText>
-                Hours may be affected by unanticipated circumstances. Check this
-                webpage for real-time updates. 
-              </ParagText>
+
+          <div className="flex justify-around w-full flex-row mt-5 mx-20 pr-32 mb-20">
+            {/* Urgent Care Hours */}
+             <div className="w-5/12 self-start">
+                  <h4 className="text-[1.5rem]">Urgent Care Hours</h4>
+                  <p className="mt-4">no appointment is necessary, and walk-ins are welcome</p>
+                  <div className="my-5">
+                    <p>Monday-Friday: 11 a.m. to 9 p.m.</p>
+                    <p>Saturday and Sunday: 9 a.m. to 7 p.m.</p>
+                    <p>Holidays: 9 a.m. to 7 p.m.</p>
+                  </div>
+                  <p className="w-9/12">Holidays include New Year's Day, Martin Luther King Jr. Day, Memorial Day, Fourth of July, Labor Day, Thanksgiving and Christmas Day.</p>
+             </div>
+             {/* Holiday Hours Locations */}
+            <div className="self-start">
+                  <h4 className="text-[1.5rem] ">Holiday Hours Offered at:</h4>
+                  <p className="mt-3">Children’s at Chamblee-Brookhaven</p>
+                  <p>Children’s at Forsyth</p>
+                  <p>Children’s at Hudson Bridge</p>
+                  <p>Children’s at Satellite Boulevard</p>
+                  <p>Children’s at Town Center</p>
+                  <p className="mt-3">Hours may be affected by unanticipated circumstances. </p>
             </div>
+            
           </div>
           {/* Why Section */}
-          <div className="flex flex-row w-full justify-center items-center">
+          <div className="flex flex-row w-full justify-center items-center mx-28">
             {/* Text */}
-            <div className="w-[750px] mt-5">
-              <Heading3Title>
+            <div className="max-w-[45rem] mt-5 mx-7">
+              <h3 className="text-black text-[1.625rem] leading-8">
                 Why Should You Take Your Child to a Pediatric Urgent Care
                 Center?
-              </Heading3Title>
-              <ParagText>
-                Children are not small adults. Unlike most urgent care centers
-                and retail clinics, our pediatric Urgent Care Centers have
-                doctors and nurses who are specially trained to diagnose and
-                treat your growing child or teen. Our doctors can communicate
-                directly with your child’s doctor, informing him or her of any
-                test results or procedures that were performed so the doctor can
-                update your child’s medical records and provide follow- up care,
-                if needed.
-              </ParagText>
-              <ParagText>Our pediatric Urgent Care Centers offer:</ParagText>
-              <div className="pl-9">
-                <ParagList>A pediatrician on staff</ParagList>
-                <ParagList>
-                  Staff specially trained to diagnose and treat children from
-                  birth to 18 years old
-                </ParagList>
-                <ParagList>
-                  Walk-in hours seven days a week, including evenings and
-                  holidays
-                </ParagList>
-                <ParagList>
-                  Lab and X-ray services to quickly diagnose your child’s minor
-                  illnesses and injuries with up to 50 percent
-                </ParagList>
-                <ParagList>less radiation than some adult facilities</ParagList>
-                <ParagList>
-                  <span className="text-[#00A94F] font-bold">
-                    Fracture care
-                  </span>{" "}
-                  for growing bones, with access to pediatric orthopedic
-                  specialists
-                </ParagList>
-                <ParagList>
-                  Access to the Children’s network of doctors and pediatric
-                  specialists
-                </ParagList>
-                <ParagList>
-                  Electronic submission of prescriptions to your pharmacy
-                </ParagList>
-              </div>
-              {/* Image */}
+              </h3>
+              <ul className="list-disc max-w-[36.1875rem] mt-5 ml-8">
+                <li>Urgent care is ideal for non-life-threatening injuries or illnesses, such as minor cuts, sprains, or common colds.</li>
+                <li>Wait times are decreased by urgent care clinics' convenient walk-in services and longer hours.</li>
+                <li>Accessible for non-emergency situations that require prompt attention but do not pose an immediate threat to life.</li>
+                <li>If you have less serious health concerns, urgent care visits can be a more cost-effective option than emergency hospital appointments.</li>
+              </ul>
             </div>
             <div className="">
               <img className="" src="doctor_and_child.png" alt="" />
