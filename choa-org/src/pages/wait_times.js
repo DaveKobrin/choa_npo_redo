@@ -10,18 +10,6 @@ import { useState } from 'react'
 import Map from "@/components/Maps";
 import Button from "@/components/Button";
 
-// EXAMPLE:
-// locationAndWaitTimes.map((location, idx) => {
-//     return (
-//     <>
-//         <WaitCard location={location} key={idx} />
-//     </>
-// )})
-
-// TODO: 
-// - Make two scrollable (fill overflow) divs, one filtered for emergency departments and one for urgent care centers
-// - be able to sort by 1. distance from user and 2. ??? wait times I think?
-
 const WaitTimes = () => {
     const [distances, setDistances] = useState([]);
 
@@ -131,6 +119,8 @@ const WaitTimes = () => {
                         </EmergencySearch>
                         </div>
                     </div>
+
+                    {/* Map Section */}
                     <div className="flex justify-center w-screen">
                         <Map/>
                     </div>
