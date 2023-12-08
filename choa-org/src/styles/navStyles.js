@@ -78,7 +78,7 @@ export const MobileNav = styled.ul`
   }
 `;
 
-export const Menu = styled.ul`
+export const Menu = styled.div`
   position: absolute;
   top: 65px;
   width: 630px;

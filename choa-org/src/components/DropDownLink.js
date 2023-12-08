@@ -2,6 +2,7 @@
 import {  NavItem,  Menu, } from '@/styles/navStyles';
 import Link from 'next/link';
 import {calendar, location, findDoc, portal} from '/src/data/icons.js';
+import Image from 'next/image'
 
 export default function DropDownLink({menuOpen, setMenuOpen, title}) {
 
@@ -108,11 +109,19 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
                   border-r-[50px] border-r-transparent ">
                 </div>
               <Menu >
-                
-                <h5>{title}</h5>
+                <div className='flex justify-between'>
+                  <div className='flex'>
+                    <h5>{title}</h5>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-3 h-3 ml-2 mt-1">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </div>
+                  <div className='cursor-pointer' onClick={()=>setMenuOpen(!menuOpen)}>
+                    <Image src={'/close_icon.png'} alt="logo" width={20} height={20} />
+                  </div>
+                </div>
                 <div className="grid grid-cols-3 mt-8">
                     <div>
-                      
                       {mainlinkList}
                     </div>
                     <div >
