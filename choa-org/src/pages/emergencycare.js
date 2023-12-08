@@ -1,6 +1,8 @@
 import { locationAndWaitTimes } from "@/data/locationAndWaitTimes";
 import { Heading3Title, ParagText, ParagList } from "@/styles/textStyles";
-import { About, EverythingText, Treatment, Photowrap, MoreButton, BtnTxt, SvgWrapper, SvgWrapper2, SeeMoreTxt, Transport, TreatmentHeader, EmergencyUrgent, ChildEmergency, Advanced } from "@/styles/emergencystyles";
+
+import { About, EverythingText, Treatment, Photowrap, MoreButton, BtnTxt, SvgWrapper, SvgWrapper2, SeeMoreTxt, Transport, TreatmentHeader, EmergencyUrgent, ChildEmergency, Advanced, TreatDropDown } from "@/styles/emergencystyles";
+
 import { SvgImg } from "@/components/svgImage";
 import { Hero } from "@/components/hero";
 
@@ -16,7 +18,9 @@ export default  function EmergencyCare ()
     <>
        <Hero img="/pediatricgirl.png" alt="girl with dog" head="Emergency Care" text="When it comes to emergency care, Children’s treats serious or life-threatening illnesses, injuries and conditions for babies, children and teens of all ages."/>
        <Link href="/"> 
-          <h2 className="p-5">Home - <svg xmlns="http://www.w3.org/2000/svg" width="6" height="11" viewBox="0 0 6 11" fill="none">
+
+          <h2 style={{display:"flex", flexDirection:"row", alignItems:"center", gap:"5px"}} className="p-5"> <span style={{color:"#00A94F"}}>Home</span> <svg xmlns="http://www.w3.org/2000/svg" width="6" height="11" viewBox="0 0 6 11" fill="none">
+
   <path d="M5.16163 6.27688L0.64863 10.7899C0.50855 10.93 0.383696 11 0.274069 11C0.188803 11 0.121808 10.9589 0.073085 10.8767C0.0243617 10.7944 0 10.6772 0 10.5249V1.38932C0 1.23706 0.0243617 1.11982 0.073085 1.0376C0.121808 0.955376 0.188803 0.914266 0.274069 0.914266C0.383696 0.914266 0.50855 0.984305 0.64863 1.12438L5.16163 5.63739C5.2469 5.72265 5.28953 5.82923 5.28953 5.95713C5.28953 6.08503 5.2469 6.19161 5.16163 6.27688Z" fill="#00A94F"/>
 </svg> Emergency Care</h2>
        </Link>
@@ -28,7 +32,11 @@ export default  function EmergencyCare ()
                 return location.facilityType === "Emergency Department";
               })
               .map((location, index) => (
+
+               
+
                 <div key={index} className="flex w-[43rem] m-4">
+
                   <LocationWaitCard location={location} />
                 </div>
               ))}
@@ -56,8 +64,12 @@ export default  function EmergencyCare ()
             Call 911 immediately if you think your child’s illness or injury is life-threatening.
         </ParagText>
         {/* drop down goes here VVV */}
-        <SvgWrapper >
-        <span>What we treat</span><SvgImg iconName="downarrow"/>
+
+        <SvgWrapper>
+            <TreatDropDown>
+                <span>What we treat</span><SvgImg iconName="downarrow"/>
+            </TreatDropDown>
+
         </SvgWrapper>
         
         </Treatment>
