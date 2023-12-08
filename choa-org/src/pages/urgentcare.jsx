@@ -71,7 +71,7 @@ const urgentCare = () => {
               </thead>
               <tbody>
                 {conditionSeverity.map((condition, index) => (
-                  <tr>
+                  <tr key={`${condition.condition}_${index}`}>
                     <td className="w-8/12 py-1 px-2 border-[#B3ADAD] border">
                       {condition.condition}
                     </td>
@@ -125,11 +125,11 @@ const urgentCare = () => {
              {/* Holiday Hours Locations */}
             <div className="self-start">
                   <h4 className="text-[1.5rem] ">Holiday Hours Offered at:</h4>
-                  <p className="mt-3">Children’s at Chamblee-Brookhaven</p>
-                  <p>Children’s at Forsyth</p>
-                  <p>Children’s at Hudson Bridge</p>
-                  <p>Children’s at Satellite Boulevard</p>
-                  <p>Children’s at Town Center</p>
+                  <p className="mt-3">Children's at Chamblee-Brookhaven</p>
+                  <p>Children's at Forsyth</p>
+                  <p>Children's at Hudson Bridge</p>
+                  <p>Children's at Satellite Boulevard</p>
+                  <p>Children's at Town Center</p>
                   <p className="mt-3">Hours may be affected by unanticipated circumstances. </p>
             </div>
             
