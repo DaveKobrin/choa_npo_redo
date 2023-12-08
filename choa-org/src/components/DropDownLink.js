@@ -17,9 +17,9 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
       {icon:findDoc,title:'Find a doctor',href:'#'},
       {icon:portal,title:'Patient portal',href:'#'},
     ]
-  const mainlinkList = main.map((link) => {
+  const mainlinkList = main.map((link,index) => {
     return (
-      <table key={link.title} className='m-3'>
+      <table key={index} className='m-3'>
         <tr >
           <td className='w-9'>{link.icon}</td>
           <td className='pl-4 pb-2 pt-2'>
@@ -39,10 +39,10 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
         {title:'Conditions & Treatments',href:'#'},
         {title:'Programs',href:'#'},
       ]
-  const sub1 = linkssub1.map((link) => {
+  const sub1 = linkssub1.map((link,index) => {
     return (
 
-      <div  className='flex-col'>
+      <div key={index}  className='flex-col'>
         <Link className='text-xs' href={link.href} onClick={closeMenu}>
           <span className='text-black'>{link.title}</span>
         </Link>
@@ -56,9 +56,9 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
         {title:'Primary Care',href:'/primarycare'},
         {title:'Telemed',href:'/telemed'},
       ]
-  const sub2 = linkssub2.map((link) => {
+  const sub2 = linkssub2.map((link,index) => {
     return (
-      <div  className='flex-col'>
+      <div key={index}  className='flex-col'>
       <Link className='text-xs' href={link.href} onClick={closeMenu}>
         <span className='text-black'>{link.title}</span>
       </Link>
@@ -75,9 +75,9 @@ export default function DropDownLink({menuOpen, setMenuOpen, title}) {
         {title:'Volunteering & Fundraising',href:'#'},
       ]
 
-  const sub3 = linkssub3.map((link) => {
+  const sub3 = linkssub3.map((link,index) => {
     return (
-      <div  className='flex-col'>
+      <div key={index}  className='flex-col'>
         <Link className='text-xs' href={link.href} onClick={closeMenu}>
           <span className='text-black'>{link.title}</span>
         </Link>
