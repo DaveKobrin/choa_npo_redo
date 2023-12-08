@@ -184,20 +184,20 @@ const WaitTimes = () => {
                         <div>
                             <Heading3Title>About Our Urgent Care Centers</Heading3Title>
                             <ParagText>At our pediatric Urgent Care Centers, no appointment is necessary, and walk-ins are welcome. Urgent Care wait times are updated every minute and are estimates based on the average time it takes for a patient to be placed in an exam room.</ParagText>
-                            <ParagText>We're open seven days a week, including evenings and holidays.</ParagText>
+                            <ParagText>We&apos;re open seven days a week, including evenings and holidays.</ParagText>
                             <div className="pl-10">
                                 <ParagList>Monday-Friday: 11 a.m. to 9 p.m.</ParagList>
                                 <ParagList>Saturday and Sunday: 9 a.m. to 7 p.m.</ParagList>
                                 <ParagList>Holidays: 9 a.m. to 7 p.m.</ParagList>
                             </div>
-                            <ParagText>Holidays include New Year's Day, Martin Luther King Jr. Day, Memorial Day, Fourth of July, Labor Day, Thanksgiving and Christmas Day.</ParagText>
+                            <ParagText>Holidays include New Year&apos;s Day, Martin Luther King Jr. Day, Memorial Day, Fourth of July, Labor Day, Thanksgiving and Christmas Day.</ParagText>
                             <ParagText>We offer holiday hours at the following Urgent Care Centers:</ParagText>
                             <div className="pl-10">
-                                <ParagList>Children's at Chamblee-Brookhaven</ParagList>
-                                <ParagList>Children's at Forsyth</ParagList>
-                                <ParagList>Children's at Hudson Bridge</ParagList>
-                                <ParagList>Children's at Satellite Boulevard</ParagList>
-                                <ParagList>Children's at Town Center</ParagList>
+                                <ParagList>Children&apos;s at Chamblee-Brookhaven</ParagList>
+                                <ParagList>Children&apos;s at Forsyth</ParagList>
+                                <ParagList>Children&apos;s at Hudson Bridge</ParagList>
+                                <ParagList>Children&apos;s at Satellite Boulevard</ParagList>
+                                <ParagList>Children&apos;s at Town Center</ParagList>
                             </div>
 
                             <ParagText>The best time to bring your child to one of our Urgent Care Centers is during the middle of the day. We are busiest in the mornings, late afternoons and evenings. When determining which center to take your child, consider both drive time and wait time. It may be better to go to a location farther away with a shorter wait time.</ParagText>
@@ -213,9 +213,9 @@ const WaitTimes = () => {
                             <img src="/girl_in_facemask.png" alt="girl in face mask" />
                         </div>
                         <div className="w-[40vw] mx-5">
-                            <h5 className="text-[1.25rem] text-[#CA005D]">Ways We're Keeping You Safe</h5>
-                            <Heading4Title>Rest assured we're here for you if you need us.</Heading4Title>
-                            <ParagText>At Children's, safety is our top priority. We are working hard to protect our patients, families and staff. Whether you have an appointment or need to visit us for emergency care, we've put extra precautions in place to keep your family safe.</ParagText>
+                            <h5 className="text-[1.25rem] text-[#CA005D]">Ways We&apos;re Keeping You Safe</h5>
+                            <Heading4Title>Rest assured we&apos;re here for you if you need us.</Heading4Title>
+                            <ParagText>At Children&apos;s, safety is our top priority. We are working hard to protect our patients, families and staff. Whether you have an appointment or need to visit us for emergency care, we&apos;ve put extra precautions in place to keep your family safe.</ParagText>
                             <Button  
                                 text={"SEE HOW"}
                                 bgColor={PageColors.BUTTON_GREEN}
@@ -236,7 +236,7 @@ const WaitTimes = () => {
                         </div>
                         <div>
                             <img src="/article_img_girl-blowing-nose.png" alt="girl with flu blowing nose" />
-                            <h6 className={`text-[${PageColors.NAVBAR_GREEN}] font-bold w-[300px]`}>Flu, COVID-19, Cold—What's the Difference?</h6>
+                            <h6 className={`text-[${PageColors.NAVBAR_GREEN}] font-bold w-[300px]`}>Flu, COVID-19, Cold—What&apos;s the Difference?</h6>
                         </div>
                         <div>
                             <img src="/article_img_boy-with-fever.png" alt="boy with fever"/>
