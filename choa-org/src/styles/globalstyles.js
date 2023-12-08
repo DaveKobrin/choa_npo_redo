@@ -34,6 +34,8 @@ export const PageColors = {
     BROWN               : "#2a1c15",
     WINE                : "#BD2F92",
     LT_BLUE             : "#0081C6",
+    BLACK_TRANS_25      : "#0000003f",
+    WHITE_TRANS_75      : "#ffffffbf",
 
 }
 
@@ -42,7 +44,7 @@ export const DeviceSize = {
     mobileM: '375px',
     mobileL: '425px',
     tablet : '768px',
-    laptopS: '1024px',
+    laptopS: '1280px',
     laptopL: '1440px',
     desktop: '1920px'
 }

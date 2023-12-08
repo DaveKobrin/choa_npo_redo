@@ -168,7 +168,7 @@ export const conditionSeverity = [
         facility: "Emergency Department"
     },
     {
-        condition: "Swimmer’s ear",
+        condition: "Swimmer's ear",
         facility: "Urgent Care"
     },
     {

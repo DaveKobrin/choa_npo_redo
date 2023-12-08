@@ -2,40 +2,24 @@ import { PageColors } from "@/styles/globalstyles";
 import { Heading3Title, ParagText, ParagList } from "@/styles/textStyles";
 import Button from "@/components/Button";
 import Link from "next/link";
+import { Hero } from "@/components/hero";
 
 const primaryCare = () => {
   return (
     <>
-        {/* Hero section */}
       <div className="min-w-screen min-h-screen">
-        <div className="relative">
-          <img
-            className="w-full"
-            src="/primary_care_hero_image.png"
-            alt="Primary Care Doctor"
-          />
-          {/* Text overlay */}
-          <div className="w-2/4 absolute top-1/2 right-1/2 transform translate-x-16 -translate-y-14 p-20 bg-white rounded bg-opacity-90">
-            <h2 className="mb-5 text-#285844 text-4xl">Primary Care</h2>
-            <p className="text-#5A5A5A">
-              Whether your child is sick or due for a well-child visit,
-              you can feel confident in knowing our Primary Care
-              Clinic is here for your family.
-            </p>
-            <div className="m-1">
-                <Button
-                  text={"MAKE AN APPOINTMENT"}
-                  bgColor={PageColors.BUTTON_GREEN}
-                  textColor={PageColors.TEXT_WHITE}
-                  borderRadius={".5rem"}
-                  fontSize={"0.9375rem"}
-                  padding={"1rem 2rem 1rem 2rem"}
-                />
-              </div>
-          </div>
-        </div>
+
+        {/* Hero section */}
+        <Hero img="/primary_care_hero_image.png"
+          head="Primary Care"
+          text="Whether your child is sick or due for a well-child visit,
+          you can feel confident in knowing our Primary Care
+          Clinic is here for your family."
+          buText="Make an Appointment" />
+
+
         <Link href="/"> 
-          <h2 className="p-5">Home - Primary Care</h2>
+          <h5 className="p-5 flex tracking-widest"><span className="text-[#00A94F] ">Home</span> <img className="h-[12px] self-center mx-2" src="/Vector_babyarrow.png"/> Primary Care</h5>
        </Link>
 
 
@@ -76,7 +60,7 @@ const primaryCare = () => {
             <Heading3Title>Appointment Cancellations</Heading3Title>
             <div className="mt-10">
               <ParagText>
-                 Sign up for this online tool to help you access your child’s medical
+                 Sign up for this online tool to help you access your child&apos;s medical
                   records and securely communicate with your healthcare team.
               </ParagText>
             </div>
@@ -100,7 +84,7 @@ const primaryCare = () => {
                   <ParagList>Terri McFadden, MD</ParagList>
               </span>
               <ParagText>
-                Some physicians and affiliated healthcare professionals who perform services at Children’s Healthcare of
+                Some physicians and affiliated healthcare professionals who perform services at Children&apos;s Healthcare of
                 Atlanta are independent providers and not hospital employees.
               </ParagText>
               </div>
@@ -119,7 +103,7 @@ const primaryCare = () => {
                 What is my MYchart?
               </Heading3Title>
              
-                <p> Sign up for this online tool to help you access your child’s medical
+                <p> Sign up for this online tool to help you access your child&apos;s medical
                   records and securely communicate with your healthcare team.</p>
                 <div className="m-1">
                 <Button
