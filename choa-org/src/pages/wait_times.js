@@ -1,4 +1,4 @@
-import { WaitCard } from "@/components/waitCard";
+import { AllWaitCard } from "@/components/allWaitCard";
 import {locationAndWaitTimes} from "@/data/locationAndWaitTimes";
 import {Heading1Title, ParagList} from '@/styles/textStyles'
 import { SearchInput, SearchIcon } from '@/styles/navStyles';
@@ -72,7 +72,7 @@ const WaitTimes = () => {
                 <>
                     <h1>{location.name}</h1>
                     <h1>{distance} miles away</h1>
-                    <WaitCard location={location} key={idx} />
+                    <AllWaitCard location={location} key={idx} />
                 </>
             )   
     });
@@ -109,7 +109,7 @@ const WaitTimes = () => {
                 <>
                     <h1>{location.name}</h1>
                     <h1>{distance} miles away</h1>
-                    <WaitCard location={location} key={idx} />
+                    <AllWaitCard location={location} key={idx} />
                 </>
             )   
     });
@@ -151,7 +151,7 @@ const WaitTimes = () => {
                                 </select>
                             </div>
                         {/* Emergency Department Wait Times Section */}
-                            <div className="border border-black w-[70vw] overflow-y-scroll h-[264px]">
+                            <div className="border border-black w-[80vw] overflow-y-scroll h-[264px]">
                                 {waitCards1}
                             </div>
                         </div>
@@ -165,7 +165,7 @@ const WaitTimes = () => {
                                     <option value="WaitTimes">Wait Times: Low to High</option>
                                 </select>
                             </div>
-                            <div className="border border-black w-[70vw] overflow-y-scroll h-[264px]">
+                            <div className="border border-black w-[80vw] overflow-y-scroll h-[264px]">
                                 {waitCards2}
                             </div>
                         </div>
