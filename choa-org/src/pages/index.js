@@ -39,7 +39,7 @@ export default function Home() {
 
     </HeroSection>
     
-      <div className='mx-auto max-w-[1500px] my-32 px-10'>
+      <div className='mx-auto max-w-[1500px] mb-32 px-10'>
           <VisitType/>
       </div>
     </div>
