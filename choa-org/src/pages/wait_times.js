@@ -219,6 +219,7 @@ const WaitTimes = () => {
                                 text={"SEE HOW"}
                                 bgColor={PageColors.BUTTON_GREEN}
                                 textColor={PageColors.TEXT_WHITE}
+                                hoverBgColor={PageColors.BUTTON_DK_GREEN}
                                 borderRadius={"2.27613rem"}
                                 fontSize={"0.85356rem"}
                                 padding={"1rem 2rem"}

@@ -83,6 +83,7 @@ const urgentCare = () => {
                   text={"DOWNLOAD CHART"}
                   bgColor={PageColors.BUTTON_GREEN}
                   textColor={PageColors.TEXT_WHITE}
+                  hoverBgColor={PageColors.BUTTON_DK_GREEN}
                   borderRadius={"2.5rem"}
                   fontSize={"0.9375rem"}
                   padding={"1.1875rem 2.8625rem 1.1875rem 2.875rem"}
@@ -93,6 +94,7 @@ const urgentCare = () => {
                   text={"DOWNLOAD CHART (EN ESPAÑOL)"}
                   bgColor={PageColors.BUTTON_GREEN}
                   textColor={PageColors.TEXT_WHITE}
+                  hoverBgColor={PageColors.BUTTON_DK_GREEN}
                   borderRadius={"2.5rem"}
                   fontSize={"0.9375rem"}
                   padding={"1.1875rem 2.8625rem 1.1875rem 2.875rem"}
