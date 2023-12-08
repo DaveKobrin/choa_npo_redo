@@ -18,6 +18,10 @@ export const NavItem = styled.li`
   margin: 0 1.5rem 0.5rem;
   font-style: normal;
 
+  &:hover {
+    color: black;
+  }
+
 
   a {
     color: #fff;
