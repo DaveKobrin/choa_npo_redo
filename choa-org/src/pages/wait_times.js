@@ -136,7 +136,7 @@ const WaitTimes = () => {
                         </div>
                     </div>
                     <div className="flex justify-center w-screen">
-                        {/* <Map/> */}
+                        <Map/>
                     </div>
                     
                     {/* Wait Times Section */}
