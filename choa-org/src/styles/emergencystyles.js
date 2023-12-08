@@ -101,7 +101,10 @@ align-items: center;
 gap: 20px;
 border-radius: 45px;
 background: #27935A;
-margin: 24px 0px 0px 0px; 
+margin: 24px 0px 0px 0px;
+&:hover {
+    background-color: #247f4f;
+  }
 `
 export const BtnTxt = styled.p`
 color: #FFF;

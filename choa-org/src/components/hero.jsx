@@ -36,6 +36,7 @@ export const Hero = (props) => {
                                 text={buText}
                                 bgColor={PageColors.BUTTON_GREEN}
                                 textColor={PageColors.TEXT_WHITE}
+                                hoverBgColor={PageColors.BUTTON_DK_GREEN}
                                 borderRadius={"1.5rem"}
                                 fontSize={"1.25rem"}
                                 padding={"1rem 2rem"}
